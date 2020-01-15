@@ -7,7 +7,6 @@
 class functions
 {
 private:
-	int a;
 	int x, y;
 
 public:
