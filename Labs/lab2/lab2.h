@@ -8,6 +8,7 @@ class functions
 {
 private:
 	int x, y;
+	int a;
 
 public:
 	//Default constructor. A constructor that can be called without parameters.
@@ -18,5 +19,7 @@ public:
 
 	int getX() { return x; }
 	int getY() { return y; }
+
+	//Move constructor. 
 };
 #endif
