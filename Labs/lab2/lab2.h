@@ -7,9 +7,8 @@
 class functions
 {
 private:
-	int x, y;
-	int a;
-
+	int a, b;
+	
 public:
 	//Default constructor. A constructor that can be called without parameters.
 	functions()
@@ -22,7 +21,16 @@ public:
 	{
 		std::cout << "Deconstructor called\n";
 	}
+
 	//Copy constructor. A member function which initializes an object using another object of the same class.
+	functions(int a1, int b1)
+	{
+		a = a1; b = b1; 
+	}
+
+	functions(const functions& x1) { a = x1.a; b = x1.b; }
+	int geta() { return a; }
+	int getb() { return b; }
 
 	//Move constructor. 
 		
