@@ -1,44 +1,63 @@
-#include<iostream>
-#include<string>
+/*
+Program: Homework 0 
+Author: Rebecca Morgan
+Date: 17th January 2020
+Description: Temperature conversion program. 
+*/
+///* argc = 3 */
 
-//Variables.
-std::string ans;
-const char* str;
+#include <iostream>
+#include <cstdlib>
+#include <string>
 
-//Functions. 
 double cpp_ftoc(const char* str);
 double c_ctof(const char* str);
 
-//Main.
-int main(int argc, char** argv)
+int main(int argc, const char** argv)
 {
-	std::cout << "1 - Celsius to fahrenheit or \n";
-	std::cout << "2 - Fahrenheit to celcius? \n";
-	std::cin >> ans;
+	if (argc >= 2 && argv[1] == std::string("--ftoc"))
+	{
+		cpp_ftoc(argv[2]);
+	}
+}
 
-	if (ans == "1")
-	{
-		c_ctof(str);
-	}
-	else if (ans == "2")
-	{
-		cpp_ftoc(str);
-	}
-	else
-	{
-		std::cout << "invalid input \n";
-	}
+double cpp_ftoc(const char* str)
+{
+	std::cout << "ftoc";
 	return 0;
 }
 
-//C++ 
-double cpp_ftoc(const char* str)
-{
-
-}
-
-//C
 double c_ctof(const char* str)
 {
-
+	std::cout << "ctof";
+	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
