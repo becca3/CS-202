@@ -15,5 +15,12 @@ void handle(char file_in_name[]);
 
 int main(long argc, char* argv[])
 {
+    char file_in_name[50];
+    int x;
+    bool VERBOSE = true;
 
+    if (VERBOSE)
+    {
+        std::cout << "HEXDUMP:\n";
+        std::cout << "Produce a hexadecimal dump of a file.\n";
 }
