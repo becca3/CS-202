@@ -58,3 +58,14 @@ void handle(char file_name[])
 
     //Open file.
     file_in.open(file_name);
+
+    //Checks if file can be opened. 
+    if (!file_in)
+    {
+        std::cout << "\n";
+        std::cout << "Error!\n";
+        std::cout << "Cannot open" << file_name << "\n";
+        return;
+    }
+
+    std::cout << "Hexdump of: " << file_name << "\n";
