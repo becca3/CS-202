@@ -15,7 +15,7 @@ void handle(char file_in_name[]);
 
 int main(long argc, char* argv[])
 {
-    char file_in_name[50];
+    char file_name[50];
     int x;
     bool VERBOSE = true;
 
@@ -23,4 +23,18 @@ int main(long argc, char* argv[])
     {
         std::cout << "HEXDUMP:\n";
         std::cout << "Produce a hexadecimal dump of a file.\n";
-}
+    }
+
+    if (argc <= 1)
+    {
+        std::cout << "Enter the name of the file you want to analyse: \n";
+        std::cin.getline(file_name, sizeof(file_name));
+        handle(file_name);
+    }
+    else
+    {
+        for (x = 1; x < argc; ++x)
+        {
+            handle(argv[x]);
+        }
+    }
