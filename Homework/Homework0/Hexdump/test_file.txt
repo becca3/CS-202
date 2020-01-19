@@ -1,0 +1,4 @@
+This is a test file!! Normal characters that get dumped as hexadecimal characters. 
+These are words! 
+These are numbers: 1234567890
+These are symbols: @;:,./?!"£$%^&*(). 

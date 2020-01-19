@@ -109,4 +109,37 @@ void handle(char file_name[])
             }
             std::cout << " ";
         }
+
+        std::cout << std::setfill(' ');
+   
+        //Print printable characters - full stop if unprintable.
+        std::cout << " ";
+        cnt2 = 0;
+        for (n = 0; n < 16; n++)
+        {
+            cnt2 = cnt2 + 1;
+            if (cnt2 <= cnt)
+            {
+                if (buffer[n] < 32 || 126 < buffer[n])
+                {
+                    std::cout << '.';
+                }
+                else
+                {
+                    std::cout << buffer[n];
+                }
+            }
+        }
+        std::cout << "\n";
+        std::cout << std::dec;
+
+        if (file_in.eof())
+        {
+            break;
+        }
+
+    }
+
+    // Close file.
+    file_in.close();
     }
