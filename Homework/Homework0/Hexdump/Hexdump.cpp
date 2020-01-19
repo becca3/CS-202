@@ -41,7 +41,7 @@ int main(long argc, char* argv[])
 
     if (VERBOSE)
     {
-        std::cout << "  Normal end of execution.\n";
+        std::cout << "End input.\n";
     }
     return 0;
 }
