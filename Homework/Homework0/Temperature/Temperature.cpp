@@ -7,32 +7,22 @@
 
 #include <string>
 #include <iostream>
-
-using std::string;
-using std::stod;
-
 #include <cstdlib>
-using std::strtod;
-
 #include <iostream>
-using std::cout;
-using std::endl;
-
 #include <stdexcept>
-using std::invalid_argument;
 
-//Takes the given C-string, cstr, which
-//represents a temperature in Celcius
-//and converts it to Fahrenheit using the 
-//strtod method in the header cstdlib.
+//Takes C-string, str, which
+//represents temperature in Celcius
+//converts it to Fahrenheit using the 
+//strtod method.
 
-double c_ctof(const char* cstr)
+double c_ctof(const char* str)
 {
 	double return_value = 0.0;
 
-	return_value = strtod(cstr, nullptr);
+	return_value = strtod(str, nullptr);
 
-	//Modifies the double from celcius
+	//Modifies double from celcius
 	//to fahrenheit.
 	return_value *= 9.0 / 5.0;
 	return_value += 32;
@@ -40,19 +30,16 @@ double c_ctof(const char* cstr)
 	return return_value;
 }
 
-//Takes the given C-string, cstr, which
-//represents a temperature in Fahrenheit
-//and converts it to Celcius using the 
-//stod method in the header string.
+//Takes C-string, str, which
+//represents temperature in Fahrenheit
+//and converts it to Celcius.
 
-double cpp_ftoc(const char* cstr)
+double cpp_ftoc(const char* str)
 {
 	double return_value = 0.0;
 
-	//Creates a temporary C++string that
-	//stod uses.
-	string str(cstr);
-	return_value = stod(str);
+	std::string str(str);
+	return_value = std::stod(str);
 
 	//Modifies the double from fahrenheit
 	//to celcius.
