@@ -78,3 +78,35 @@ void handle(char file_name[])
     //Dump the file contents.
 
     addr = 0;
+
+    while (1)
+    {
+        file_in.read((char*)buffer, 16);
+        cnt = file_in.gcount();
+
+        if (cnt <= 0)
+        {
+            break;
+        }
+
+        // Print the address in decimal and hexadecimal.
+        std::cout << std::setw(7) << (int)addr << "  ";
+        addr = addr + 16;
+
+        //Print 16 data items, in pairs, in hexadecimal.
+        cnt2 = 0;
+        for (n = 0; n < 16; n++)
+        {
+            cnt2 = cnt2 + 1;
+
+            if (cnt2 <= cnt)
+            {
+                std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)buffer[n];
+            }
+            else
+            {
+                std::cout << "  ";
+            }
+            std::cout << " ";
+        }
+    }
