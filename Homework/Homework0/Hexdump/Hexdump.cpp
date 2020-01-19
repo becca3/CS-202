@@ -45,3 +45,16 @@ int main(long argc, char* argv[])
     }
     return 0;
 }
+
+//Function to handle input. 
+void handle(char file_name[])
+{
+    long int addr;
+    unsigned char buffer[20];
+    long int cnt;
+    long int cnt2;
+    std::ifstream file_in;
+    long n;
+
+    //Open file.
+    file_in.open(file_name);
