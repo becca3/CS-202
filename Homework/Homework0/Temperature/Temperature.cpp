@@ -48,22 +48,3 @@ int main(int argc, const char** argv)
 	cpp_ftoc;
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
