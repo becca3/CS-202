@@ -1,4 +1,4 @@
 ﻿  Temperature.cpp
-D:\C++ work\CS202\CS202 work\Homework\Homework0\Temperature\Temperature.cpp(55,2): warning C4551: function call missing argument list
-D:\C++ work\CS202\CS202 work\Homework\Homework0\Temperature\Temperature.cpp(56,2): warning C4551: function call missing argument list
+D:\C++ work\CS202\CS202 work\Homework\Homework0\Temperature\Temperature.cpp(53,2): warning C4551: function call missing argument list
+D:\C++ work\CS202\CS202 work\Homework\Homework0\Temperature\Temperature.cpp(54,2): warning C4551: function call missing argument list
   Temperature.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework0\Temperature\Debug\Temperature.exe
