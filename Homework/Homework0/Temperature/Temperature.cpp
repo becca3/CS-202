@@ -34,11 +34,11 @@ double c_ctof(const char* str)
 //represents temperature in Fahrenheit
 //and converts it to Celcius.
 
-double cpp_ftoc(const char* str)
+double cpp_ftoc(const char* cstr)
 {
 	double return_value = 0.0;
 
-	std::string str(str);
+	std::string str(cstr);
 	return_value = std::stod(str);
 
 	//Modifies the double from fahrenheit
@@ -51,7 +51,6 @@ double cpp_ftoc(const char* str)
 
 int main(int argc, const char** argv)
 {
-	std::cout << "Temp \n";
 	c_ctof;
 	cpp_ftoc;
 	return 0;
