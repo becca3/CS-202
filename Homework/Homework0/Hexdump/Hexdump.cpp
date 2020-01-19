@@ -69,3 +69,12 @@ void handle(char file_name[])
     }
 
     std::cout << "Hexdump of: " << file_name << "\n";
+
+    std::cout <<
+        "Address               Hexadecimal values                  Printable\n";
+    std::cout <<
+        "-------  -----------------------------------------------  -------------\n";
+    std::cout << "\n";
+    //Dump the file contents.
+
+    addr = 0;
