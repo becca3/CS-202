@@ -38,3 +38,10 @@ int main(long argc, char* argv[])
             handle(argv[x]);
         }
     }
+
+    if (VERBOSE)
+    {
+        std::cout << "  Normal end of execution.\n";
+    }
+    return 0;
+}
