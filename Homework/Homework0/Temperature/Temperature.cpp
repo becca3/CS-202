@@ -44,7 +44,7 @@ double cpp_ftoc(const char* cstr)
 
 int main(int argc, const char** argv)
 {
-	c_ctof;
-	cpp_ftoc;
+	std::cout << c_ctof << "\n";
+	std::cout << cpp_ftoc << "\n";
 	return 0;
 }
