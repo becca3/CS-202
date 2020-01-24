@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="lab2_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lab2.h" />
