@@ -3,13 +3,13 @@
 //Constructor.
 functions::functions()
 {
-	std::cout << "Default constructor called \n";
+	//std::cout << "Default constructor called \n";
 }
 
 //Deconstructor.
 functions::~functions()
 {
-	std::cout << "Deconstructor called\n";
+	//std::cout << "Deconstructor called\n";
 }
 
 //Copy constructor.
@@ -24,5 +24,5 @@ functions::functions(int& x)
 	std::cout << "Number is: " << x << "\n";
 }
 
-//Move constructor.
+//Vector of objects.
 
