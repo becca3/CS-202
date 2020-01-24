@@ -16,6 +16,11 @@ int main(int argc, char** argv)
 	//Pass by ref.
 	functions(y);
 
-	//Move constructor.
+	//Vector of objects.
+	std::vector<functions> nums;
+	for (int i = 0; i < 5; i++)
+	{
+		nums.push_back(functions());
+	}
 	return 0;
 }
