@@ -21,3 +21,8 @@ void StopWatch::Stop()
 {
 	auto end = std::chrono::system_clock::now();
 }
+
+void StopWatch::Milli()
+{
+	auto milli = std::chrono::milliseconds();
+}

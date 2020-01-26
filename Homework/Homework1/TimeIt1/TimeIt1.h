@@ -26,6 +26,9 @@ public:
 
 	//Function to stop the stopwatch.
 	void Stop();
+
+	//Function to report time elapsed in milliseconds. 
+	void Milli();
 };
 
 #endif
