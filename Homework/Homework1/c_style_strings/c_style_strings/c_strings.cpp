@@ -18,3 +18,15 @@ unsigned int string_size(const char* cstr)
 	//The '\0' counts as a character.
 	return size + 1;
 }
+
+char* str_dup(const char* cstr)
+{
+	//Creates a C-string on the heap.
+	char* newcstr = new char[string_size(cstr)];
+
+	//Loops and copies each character of cstr to newcstr.
+	for (unsigned int i = 0; i < string_size(newcstr) - 1; ++i)
+		newcstr[i] = cstr[i];
+
+	return newcstr;
+}
