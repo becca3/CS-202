@@ -30,3 +30,11 @@ char* str_dup(const char* cstr)
 
 	return newcstr;
 }
+
+int find_a(const char* cstr, const char* a)
+{
+	int cstr_size = string_size(cstr);
+	int a_size = string_size(a);
+
+	return -1;
+}
