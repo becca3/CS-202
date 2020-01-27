@@ -7,34 +7,45 @@ Description: Making a stopwatch.
 
 #include "TimeIt1.h"
 
-StopWatch::StopWatch()
-{
-	Start();
-	EndTime = std::chrono::system_clock::now();
+using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::steady_clock;
+
+Stopwatch::Stopwatch() {
+    this->startTime = steady_clock::now();
+    this->running = true;
 }
 
-StopWatch::~StopWatch()
-{
-
+void Stopwatch::start() {
+    this->startTime = steady_clock::now();
+    this->running = true;
 }
 
-void StopWatch::Start()
-{
-	StartTime = std::chrono::system_clock::now();
+void Stopwatch::stop() {
+    if (this->running) {
+        this->endTime = steady_clock::now();
+        this->running = false;
+    }
 }
 
-//void StopWatch::Restart()
-//{
-//
-//}
-
-double StopWatch::Stop()
-{
-	EndTime = std::chrono::system_clock::now();
-	return std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime).count() / 100.0;
+double Stopwatch::Seconds() {
+    if (this->running) {
+        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration<double>>(steady_clock::now() - this->startTime);
+        return time_span.count();
+    }
+    else {
+        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration<double>>(this->endTime - this->startTime);
+        return time_span.count();
+    }
 }
 
-//void StopWatch::Milli()
-//{
-//	auto milli = std::chrono::milliseconds();
-//}
+double Stopwatch::Milli() {
+    if (this->running) {
+        duration<double, std::ratio<1, 1000>> time_span = duration_cast<duration<double>>(steady_clock::now() - this->startTime);
+        return time_span.count();
+    }
+    else {
+        duration<double, std::ratio<1, 1000>> time_span = duration_cast<duration<double>>(this->endTime - this->startTime);
+        return time_span.count();
+    }
+}

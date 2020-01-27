@@ -5,42 +5,29 @@ Date: 24th January 2020
 Description: Making a stopwatch.
 */
 
-#ifndef TIMEIT1_H
-#define TIMEIT1_H
+#ifndef TIMEIT1_INCLUDE
+#define TIMEIT1_INCLUDE
 
-#include<iostream>
-#include<chrono>
-#include<ctime>
-#include<vector>
-#include<algorithm>
-#include<random>
+#include <algorithm>
+#include <iostream>
+#include <random>
+#include <string>
+#include <vector>
+#include <chrono>
 
-class StopWatch
-{
+class Stopwatch {
+    std::chrono::steady_clock::time_point startTime;
+    std::chrono::steady_clock::time_point endTime;
+    bool running;
+
 public:
+    Stopwatch();
 
-	//Member functions.
+    void start();
+    void stop();
 
-	//Function to start the stopwatch.
-	StopWatch();
-	
-	void Start();
-
-	//Function to stop the stopwatch.
-	double Stop();
-
-	//Deconstructor.
-	~StopWatch();
-
-	//Function to restart the stopwatch.
-	//void Restart();
-
-	//Function to report time elapsed in milliseconds. 
-	//void Milli();
-
-private:
-	std::chrono::system_clock::time_point StartTime;
-	std::chrono::system_clock::time_point EndTime;
+    double Seconds();
+    double Milli();
 };
 
 #endif
