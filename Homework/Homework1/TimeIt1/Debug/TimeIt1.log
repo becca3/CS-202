@@ -1,2 +1,4 @@
-﻿  TimeIt1.cpp
+﻿  TimeIt1_main.cpp
+D:\C++ work\CS202\CS202 work\Homework\Homework1\TimeIt1\TimeIt1_main.cpp(55,10): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\C++ work\CS202\CS202 work\Homework\Homework1\TimeIt1\TimeIt1_main.cpp(63,23): warning C4834: discarding return value of function with 'nodiscard' attribute
   TimeIt1.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework1\TimeIt1\Debug\TimeIt1.exe

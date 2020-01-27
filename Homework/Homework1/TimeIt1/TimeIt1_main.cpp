@@ -26,51 +26,52 @@ SearchResult batch(int elements)
     std::vector<int> target = { randomDist(engine) };
     SearchResult res;
 
-    // Generate numbers.
-    std::cout << "Generating dataset of " << elements << " elements. " <<
+    //Generate numbers.
+    std::cout << "Generating dataset of " << elements << " elements.\n" <<
         std::string(15 - std::to_string(elements).size(), ' ');
     timer.start();
     std::vector<int> nums;
-    for (int i = 0; i < elements; i++) 
+    for (int x = 0; x < elements; x++) 
     {
         nums.push_back(randomDist(engine));
     }
 
     timer.stop();
     res.generate = timer.Milli();
-    std::cout << timer.Seconds() << " seconds (" << timer.Milli() << "ms)" << std::endl;
+    std::cout << timer.Seconds() << " seconds. (" << timer.Milli() << "ms)" << std::endl;
 
-    // Sort the numbers.
-    std::cout << "Sorting dataset. ";
+    //Sort the numbers.
+    std::cout << "Sorting dataset.\n";
     timer.start();
     std::sort(nums.begin(), nums.end());
     timer.stop();
-    res.sort = timer.Milli();
-    std::cout << "took " << timer.Seconds() << " seconds (" << timer.Milli() << "ms)" << std::endl;
 
-    // Standard search
-    std::cout << "Searching nums with standard search...         " << std::flush;
+    res.sort = timer.Milli();
+    std::cout << timer.Seconds() << " seconds. (" << timer.Milli() << "ms)" << std::endl;
+
+    //Standard search.
+    std::cout << "Searching numbers with standard search.\n";
     timer.start();
     std::search(nums.begin(), nums.end(), target.begin(), target.end());
     timer.stop();
     res.standard = timer.Milli();
-    std::cout << "took " << timer.Seconds() << " seconds (" << timer.Milli() << "ms)" << std::endl;
+    std::cout << timer.Seconds() << " seconds. (" << timer.Milli() << "ms)" << std::endl;
 
-    // Binary search
-    std::cout << "Searching nums with binary search...           " << std::flush;
+    //Binary search.
+    std::cout << "Searching numbers with binary search.\n";
     timer.start();
     std::binary_search(nums.begin(), nums.end(), target[0]);
     timer.stop();
     res.binary = timer.Milli();
-    std::cout << "took " << timer.Seconds() << " seconds (" << timer.Milli() << "ms)" << std::endl;
+    std::cout << timer.Seconds() << " seconds. (" << timer.Milli() << "ms)" << std::endl;
 
     // Shuffle the nums
-    std::cout << "Shuffling nums...                              " << std::flush;
+    std::cout << "Shuffling numbers.\n";
     timer.start();
     std::shuffle(nums.begin(), nums.end(), engine);
     timer.stop();
     res.shuffle = timer.Milli();
-    std::cout << "took " << timer.Seconds() << " seconds (" << timer.Milli() << "ms\n" << std::endl;
+    std::cout << timer.Seconds() << " seconds. (" << timer.Milli() << "ms\n" << std::endl;
 
     return res;
 }
@@ -89,10 +90,10 @@ int main() {
         results.push_back(trialResults);
     }
 
-    int p = 1;
+    int q = 1;
     for (auto set : results) {
-        p *= 10;
-        std::cout << p << ",,,,\nGenerate,Sort,Standard,Binary,Shuffle\n";
+        q *= 10;
+        std::cout << q << ",,,,\nGenerate, Sort, Standard, Binary, Shuffle\n";
         for (auto result : set) {
             std::cout << result.generate << ',' << result.sort << ',' << result.standard
                 << ',' << result.binary << ',' << result.shuffle << '\n';
