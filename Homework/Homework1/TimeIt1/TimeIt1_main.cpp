@@ -20,24 +20,27 @@ std::random_device r;
 std::default_random_engine engine(r());
 std::uniform_int_distribution<int> randomDist(INT32_MIN, INT32_MAX);
 
-SearchResult batch(int elements) {
+SearchResult batch(int elements) 
+{
     Stopwatch timer;
     std::vector<int> target = { randomDist(engine) };
     SearchResult res;
 
-    // Generate nums
+    // Generate numbers.
     std::cout << "Generating dataset of " << elements << " elements. " <<
         std::string(15 - std::to_string(elements).size(), ' ');
     timer.start();
     std::vector<int> nums;
-    for (int i = 0; i < elements; i++) {
+    for (int i = 0; i < elements; i++) 
+    {
         nums.push_back(randomDist(engine));
     }
+
     timer.stop();
     res.generate = timer.Milli();
     std::cout << timer.Seconds() << " seconds (" << timer.Milli() << "ms)" << std::endl;
 
-    // Sort the nums (as to use with some search algorythms)
+    // Sort the numbers.
     std::cout << "Sorting dataset. ";
     timer.start();
     std::sort(nums.begin(), nums.end());

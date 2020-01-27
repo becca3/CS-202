@@ -15,18 +15,24 @@ Description: Making a stopwatch.
 #include <vector>
 #include <chrono>
 
-class Stopwatch {
+class Stopwatch 
+{
     std::chrono::steady_clock::time_point startTime;
     std::chrono::steady_clock::time_point endTime;
     bool running;
 
 public:
+
+    //Starts stopwatch.
     Stopwatch();
 
     void start();
     void stop();
 
+    //Returns values in seconds.
     double Seconds();
+
+    //Returns values in milliseconds.
     double Milli();
 };
 

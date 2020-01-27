@@ -11,41 +11,54 @@ using std::chrono::duration;
 using std::chrono::duration_cast;
 using std::chrono::steady_clock;
 
-Stopwatch::Stopwatch() {
+Stopwatch::Stopwatch() 
+{
     this->startTime = steady_clock::now();
     this->running = true;
 }
 
-void Stopwatch::start() {
+void Stopwatch::start() 
+{
     this->startTime = steady_clock::now();
     this->running = true;
 }
 
-void Stopwatch::stop() {
-    if (this->running) {
+void Stopwatch::stop() 
+{
+    if (this->running) 
+    {
         this->endTime = steady_clock::now();
         this->running = false;
     }
 }
 
-double Stopwatch::Seconds() {
-    if (this->running) {
-        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration<double>>(steady_clock::now() - this->startTime);
+double Stopwatch::Seconds() 
+{
+    if (this->running)
+    {
+        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration
+            <double>>(steady_clock::now() - this->startTime);
         return time_span.count();
     }
-    else {
-        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration<double>>(this->endTime - this->startTime);
+    else 
+    {
+        duration<double, std::ratio<1, 1>> time_span = duration_cast<duration
+            <double>>(this->endTime - this->startTime);
         return time_span.count();
     }
 }
 
-double Stopwatch::Milli() {
-    if (this->running) {
-        duration<double, std::ratio<1, 1000>> time_span = duration_cast<duration<double>>(steady_clock::now() - this->startTime);
+double Stopwatch::Milli() 
+{
+    if (this->running)
+    {
+        duration<double, std::ratio<1, 1000>> time_span = duration_cast
+            <duration<double>>(steady_clock::now() - this->startTime);
         return time_span.count();
     }
     else {
-        duration<double, std::ratio<1, 1000>> time_span = duration_cast<duration<double>>(this->endTime - this->startTime);
+        duration<double, std::ratio<1, 1000>> time_span = duration_cast
+            <duration<double>>(this->endTime - this->startTime);
         return time_span.count();
     }
 }
