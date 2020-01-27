@@ -22,7 +22,7 @@ std::uniform_int_distribution<int> randomDist(INT32_MIN, INT32_MAX);
 
 SearchResult batch(int elements) 
 {
-    Stopwatch timer;
+    StopWatch timer;
     std::vector<int> target = { randomDist(engine) };
     SearchResult res;
 

@@ -11,19 +11,19 @@ using std::chrono::duration;
 using std::chrono::duration_cast;
 using std::chrono::steady_clock;
 
-Stopwatch::Stopwatch() 
+StopWatch::StopWatch() 
 {
     this->startTime = steady_clock::now();
     this->running = true;
 }
 
-void Stopwatch::start() 
+void StopWatch::start() 
 {
     this->startTime = steady_clock::now();
     this->running = true;
 }
 
-void Stopwatch::stop() 
+void StopWatch::stop() 
 {
     if (this->running) 
     {
@@ -32,7 +32,7 @@ void Stopwatch::stop()
     }
 }
 
-double Stopwatch::Seconds() 
+double StopWatch::Seconds() 
 {
     if (this->running)
     {
@@ -48,7 +48,7 @@ double Stopwatch::Seconds()
     }
 }
 
-double Stopwatch::Milli() 
+double StopWatch::Milli() 
 {
     if (this->running)
     {

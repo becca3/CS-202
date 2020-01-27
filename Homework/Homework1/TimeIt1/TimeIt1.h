@@ -15,7 +15,7 @@ Description: Making a stopwatch.
 #include <vector>
 #include <chrono>
 
-class Stopwatch 
+class StopWatch 
 {
     std::chrono::steady_clock::time_point startTime;
     std::chrono::steady_clock::time_point endTime;
@@ -24,7 +24,7 @@ class Stopwatch
 public:
 
     //Starts stopwatch.
-    Stopwatch();
+    StopWatch();
 
     void start();
     void stop();
