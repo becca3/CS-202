@@ -7,17 +7,18 @@ Description: Making a stopwatch.
 
 #include "TimeIt1.h"
 
+std::random_device r;
+std::default_random_engine engine(r());
+std::uniform_int_distribution<int> randomDist(INT32_MIN, INT32_MAX);
+
+std::vector<int> target = { randomDist(engine) };
+std::vector<int> nums;
+
 int main(int argc, char** argv)
 {
-	std::random_device r;
-	std::default_random_engine engine(r());
-	std::uniform_int_distribution<int> randomDist(INT32_MIN, INT32_MAX);
 	StopWatch watch = StopWatch();
-	std::vector<int> target = {	randomDist(engine) };
 
-	std::vector<int> nums;
-
-	for (int x = 0; x < 1000000; x++)
+	for (int x = 0; x < 1000000000; x++)
 	{
 		nums.push_back(x);
 	}
