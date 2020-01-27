@@ -30,5 +30,6 @@ int main(int argc, char** argv)
 	watch.Start();
 	std::binary_search(nums.begin(), nums.end(), target[0]);
 	std::cout << watch.Stop() << " seconds for a binary search." << std::endl;
+
 	return 0;
 }
