@@ -6,3 +6,15 @@ Description: C style strings program.
 */
 
 #include <iostream>
+
+//Returns length of C-string.
+unsigned int string_size(const char* cstr)
+{
+	unsigned int size = 0;
+
+	while (cstr[size] != '\0')
+		++size;
+
+	//The '\0' counts as a character.
+	return size + 1;
+}
