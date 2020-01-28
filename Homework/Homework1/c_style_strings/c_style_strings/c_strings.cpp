@@ -38,3 +38,16 @@ int find_a(const char* cstr, const char* a)
 
 	return -1;
 }
+
+void testing()
+{
+	const char* test_cstr = str_dup("Polar bears are cool!");
+	std::cout << test_cstr << std::endl;
+	delete[] test_cstr;
+}
+
+int main()
+{
+	testing();
+	return 0;
+}
