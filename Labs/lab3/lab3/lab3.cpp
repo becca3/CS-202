@@ -2,13 +2,8 @@
 
 int main(int argc, char** argv)
 {
-	//Declaring an object of the class. 
-	functions fun1;
-	functions fun2;
-
 	//Create a pointer to the object. 
-	std::cout << "Creating a raw pointer.\n";
-	functions *ptrfun1;
+	
 
 	//int ptr2fun2 = { nullptr };
 
@@ -17,10 +12,6 @@ int main(int argc, char** argv)
 	functions* ptr2fun2;
 
 //	std::cout << ptr2fun2;
-
-	   
-	//Address of pointer. 
-	ptrfun1 = &fun1;
 
 
 	//Default and deconstructor.

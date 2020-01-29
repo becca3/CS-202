@@ -29,6 +29,10 @@ public:
 	//Pass by reference.
 	functions(int& x);
 
-	//Move constructor. 
+	void setName(std::string name);
+	void setAnimal(std::string name);
+	void getOwner(std::string& name);
+
+	std::unique_ptr<functions> animal(const std::string name, const int color);
 };
 #endif
