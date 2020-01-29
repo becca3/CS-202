@@ -138,11 +138,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="lab2.h" />
+    <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="lab3_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab2.cpp" />
-    <ClCompile Include="lab3.cpp" />
+    <ClInclude Include="lab3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
