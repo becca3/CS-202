@@ -11,8 +11,9 @@ int main(int argc, char** argv)
 	std::unique_ptr<Animals> newName = std::move(bear);
 	std::cout << "Made unique_ptr<Animals> newName which moved bear: " << newName << std::endl;
 
-	std::cout << "Making a shared_ptr to an object." << std::endl;
 	std::shared_ptr<int> ani1(new int(3));
+	std::shared_ptr<int>::element_type val = *ani1;
+	std::cout << "Making a shared_ptr to an object. " << "*ani1 == " << val << std::endl;
 
 	delete aniPtr;
 	std::cout << "Delete pointer." << std::endl;	 
