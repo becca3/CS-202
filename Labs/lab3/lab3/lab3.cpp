@@ -1,40 +1,49 @@
 #include "lab3.h"
 
-int main(int argc, char** argv)
+Animals::Animals()
 {
-	//Create a pointer to the object. 
-	
+	setAnimal("Bear");
+	setName("Default");
+}
+Animals::Animals(std::string animal_)
+{
+	setAnimal(animal_);
+	setName("Default");
+}
+Animals::Animals(const Animals& type)
+{
+	setAnimal(type.x_name_);
+	setName(type.animal_);
+}
+void Animals::getName(std::string& name)
+{
+	name = animal_;
+}
+void Animals::setName(std::string name)
+{
+	animal_ = name;
+}
+void Animals::setAnimal(std::string animal_)
+{
+	x_name_ = animal_;
+}
 
-	//int ptr2fun2 = { nullptr };
+//std::string Animals::properties()
+//{
+//	std::stringstream ss;
+//	ss << "Owner is " << owner << "\nColor is 0x" << std::hex << j_color << std::endl;
+//	return ss.str();
+//}
 
-	//Unique pointer of an object. 
-	std::cout << "Creating a unique ptr to an object.\n";
-	functions* ptr2fun2;
+Animals::~Animals()
+{
 
-//	std::cout << ptr2fun2;
+}
 
-
-	//Default and deconstructor.
-	functions();
-	functions d;
-	d.show();
-
-	//Copy constructor.
-	functions x2(5, 50);
-	functions x1 = x2; //Passes object by value.
-	std::cout << "x2.a = " << x2.geta() << ", x2.b = " << x2.getb() << "\n";
-	std::cout << "x1.a = " << x1.geta() << ", x1.b = " << x1.getb() << "\n";
-
-	//Pass by ref.
-	functions(y);
-	std::cout;
-
-	//Vector of objects.
-	std::vector<functions> nums;
-	for (int i = 0; i < 5; i++)
-	{
-		nums.push_back(functions());
-	}
-	return 0;
-
+std::unique_ptr<Animals> Animals::animalMake(const std::string name, const std::string animal_)
+{
+	Animals j = Animals();
+	j.setAnimal(animal_);
+	j.setName(name);
+	return std::unique_ptr<Animals>(&j);
 }
