@@ -1,5 +1,7 @@
 #include "lab3.h"
 
+int x; 
+
 int main(int argc, char** argv)
 {
 	Animals* aniPtr = new Animals();
@@ -13,7 +15,8 @@ int main(int argc, char** argv)
 
 	std::shared_ptr<int> ani1(new int(3));
 	std::shared_ptr<int>::element_type val = *ani1;
-	std::cout << "Making a shared_ptr to an object. " << "*ani1 == " << val << std::endl;
+	std::shared_ptr<Animals> goose = std::make_shared<Animals>();
+	std::cout << "Making a shared_ptr<Animals> goose. " << goose << std::endl;
 
 	delete aniPtr;
 	std::cout << "Delete pointer." << std::endl;	 
