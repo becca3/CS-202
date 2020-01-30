@@ -12,4 +12,5 @@ int main(int argc, char** argv)
 	std::cout << "Made unique_ptr<Animals> newName which moved bear: " << newName << std::endl;
 
 	delete aniPtr;
+	std::cout << "Delete pointer." << std::endl;	 
 }
