@@ -40,3 +40,4 @@ std::unique_ptr<Animals> Animals::animalMake(const std::string name, const std::
 	x.setName(name);
 	return std::unique_ptr<Animals>(&x);
 }
+

@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <memory>
+#include <algorithm>
 
 class Animals
 {
