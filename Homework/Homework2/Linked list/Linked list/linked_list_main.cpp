@@ -54,7 +54,7 @@ int main(int argc, char** argv)
 	//Create node n1.
 	auto n1{ std::make_unique<Animal>(1) };
 
-	//Link node n0 to n1.
+	//Link node n0 to n1. And so on..
 	n1->next = std::move(n0);
 	auto n2{ std::make_unique<Animal>(2) };
 	n2->next = std::move(n1);
