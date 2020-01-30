@@ -13,10 +13,12 @@ int main(int argc, char** argv)
 	std::unique_ptr<Animals> newName = std::move(bear);
 	std::cout << "Made unique_ptr<Animals> newName which moved bear: " << newName << std::endl;
 
-	std::shared_ptr<int> ani1(new int(3));
-	std::shared_ptr<int>::element_type val = *ani1;
-	std::shared_ptr<Animals> goose = std::make_shared<Animals>();
-	std::cout << "Making a shared_ptr<Animals> goose. " << goose << std::endl;
+	std::shared_ptr<Animals> goose = std::make_shared<Animals>("Bear");
+	std::cout << "Made shared_ptr<Animals> goose which made a shared pointer to the first animal: "
+		<< goose << std::endl;
+	std::shared_ptr<Animals> duck = goose;
+	std::cout << "Made shared_ptr<Animals> duck which made a shared pointer to the first animal: " 
+		<< duck << std::endl;
 
 	delete aniPtr;
 	std::cout << "Delete pointer." << std::endl;	 
