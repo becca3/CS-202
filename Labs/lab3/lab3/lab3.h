@@ -22,7 +22,6 @@ public:
 	void setAnimal(std::string animal);
 	void setName(std::string name);
 	void getName(std::string& name);
-	//std::string properties();
 
 	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);
 };
