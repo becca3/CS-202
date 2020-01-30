@@ -142,6 +142,7 @@
     <ClCompile Include="lab3_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Catch2.h" />
     <ClInclude Include="lab3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

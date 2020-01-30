@@ -7,6 +7,7 @@
 #include <sstream>
 #include <memory>
 #include <algorithm>
+#include "Catch2.h"
 
 class Animals
 {
@@ -28,5 +29,11 @@ public:
 	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);
 };
 
-
+class vector3f
+{
+public: 
+	float x;
+	float y;
+	float z;
+};
 #endif

@@ -1,4 +1,5 @@
 #include "lab3.h"
+#include "Catch2.h"
 
 Animals::Animals()
 {

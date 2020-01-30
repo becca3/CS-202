@@ -1,6 +1,5 @@
 #include "lab3.h"
-
-int x; 
+#include "Catch2.h"
 
 int main(int argc, char** argv)
 {
