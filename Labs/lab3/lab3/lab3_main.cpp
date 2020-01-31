@@ -1,5 +1,6 @@
 #include "lab3.h"
 #include "Catch2.h"
+#define CATCH_CONFIG_MAIN 
 
 int main(int argc, char** argv)
 {
@@ -15,6 +16,7 @@ int main(int argc, char** argv)
 	std::shared_ptr<Animals> goose = std::make_shared<Animals>("Bear");
 	std::cout << "Made shared_ptr<Animals> goose which made a shared pointer to the first animal: "
 		<< goose << std::endl;
+
 	std::shared_ptr<Animals> duck = goose;
 	std::cout << "Made shared_ptr<Animals> duck which made a shared pointer to the first animal: " 
 		<< duck << std::endl;

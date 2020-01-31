@@ -29,11 +29,17 @@ public:
 	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);
 };
 
-class vector3f
+class Vector3f
 {
 public: 
+		
+
+private: 
 	float x;
 	float y;
 	float z;
+
+	/*bool operator == (const Vector3f& a, const Vector3f& b) { return (a.x == b.x) && (a.y == b.y) && (a.z == b.z); }
+	bool operator != (const Vector3f& a, const Vector3f& b) { return (a.x != b.x) || (a.y != b.y) || (a.z != b.z); }*/
 };
 #endif
