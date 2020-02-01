@@ -10,6 +10,12 @@ struct Animal
 	int zoo = 0;
 	int food = 0;
 	int health = 0;
+
+	int value;
+	Animal* prev;
+	Animal* succ;
+	Animal(const int& v, Animal* p = nullptr, Animal* s = nullptr)
+		: value{ v }, prev{ p }, succ{ s } { }
 };
 
 #endif // !LINKED_LIST.H
