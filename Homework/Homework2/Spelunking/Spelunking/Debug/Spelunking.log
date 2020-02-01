@@ -1,0 +1,4 @@
+﻿  splunking.cpp
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Spelunking\splunking.cpp(198): warning C4715: 'Map::shoot': not all control paths return a value
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Spelunking\splunking.cpp(167): warning C4715: 'Map::movePlayer': not all control paths return a value
+  Spelunking.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Debug\Spelunking.exe
