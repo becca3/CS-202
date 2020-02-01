@@ -2,20 +2,9 @@
 #include <string>
 #include <list>
 #include <memory>
+
+#include "linked_list.h"
 #include "Catch2.h"	
-
-//Struct of animal data. 
-struct Animal
-{
-	int id = 0;
-	int age = 0;
-	int amount = 0;
-	int zoo = 0;
-	int food = 0;
-	int health = 0;
-
-	std::unique_ptr<Animal> next;
-};
 
 void printAnimal(const Animal& val)
 {

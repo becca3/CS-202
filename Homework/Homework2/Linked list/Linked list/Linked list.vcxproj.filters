@@ -23,5 +23,8 @@
     <ClInclude Include="Catch2.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="linked_list.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
