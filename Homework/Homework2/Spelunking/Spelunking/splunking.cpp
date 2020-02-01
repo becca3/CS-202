@@ -5,11 +5,6 @@ Class: CS 202
 Description: Hunt the Wumpus game for cs 202.
 */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<limits>
-
 const int ROOMS = 20;
 const int BATS = 3;
 const int PITS = 3;
