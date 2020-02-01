@@ -87,4 +87,14 @@ void Map::addBats()
         vacant.erase(vacant.begin() + r);
     }
 }
+
+//Place pits
+void Map::addPits()
+{
+    for (int i = 0; i < PITS; ++i) {
+        int r = rand() % vacant.size();
+        cave[vacant[r]].pit = true;
+        vacant.erase(vacant.begin() + r);
+    }
+}
 #endif // !SPELUNKING_H
