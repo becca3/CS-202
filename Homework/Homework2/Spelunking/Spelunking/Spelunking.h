@@ -97,4 +97,21 @@ void Map::addPits()
         vacant.erase(vacant.begin() + r);
     }
 }
+
+//Prints the room state to the player.
+void Map::reportState()
+{
+    std::cout << "You are in room " << p1.room() << std::endl;
+    std::cout << "Adjacent rooms are " << p1.getAdj(0) << ", " << p1.getAdj(1)
+        << ", " << p1.getAdj(2) << std::endl;
+
+    if (cave[p1.getAdj(0)].bat || cave[p1.getAdj(1)].bat || cave[p1.getAdj(2)].bat)
+        std::cout << "Bats are near." << std::endl;
+
+    if (cave[p1.getAdj(0)].pit || cave[p1.getAdj(1)].pit || cave[p1.getAdj(2)].pit)
+        std::cout << "You feel a cool draft." << std::endl;
+
+    if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
+        std::cout << "You can smell the Wumpus!!" << std::endl;
+}
 #endif // !SPELUNKING_H
