@@ -35,7 +35,7 @@ class Map
     //Keeps track of empty rooms.
     std::vector<int> vacant; 
 
-    Player play;
+    Player p1;
 
     void addWumpus();
     void addBats();
@@ -53,4 +53,20 @@ public:
     void init();
     void play();
 };
+
+//Spawn player.
+void Map::addPlayer()
+{
+    int r = rand() % vacant.size();
+    cave[vacant[r]].player = true;
+    p1.setCurrRoom(vacant[r]);
+
+    vacant.erase(vacant.begin() + r);
+
+    //No enemies spawn adjacent to player.
+    for (int i = 0; i < 3; ++i)
+    {
+        vacant.erase(std::find(vacant.begin(), vacant.end(), p1.getAdj(i)));
+    }
+}
 #endif // !SPELUNKING_H

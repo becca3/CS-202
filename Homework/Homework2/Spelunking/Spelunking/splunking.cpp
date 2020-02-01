@@ -20,4 +20,3 @@ void Player::setAdjRooms()
     adjRooms[1] = (currRoom + t) % ROOMS;
     adjRooms[2] = (currRoom - t + 20) % ROOMS;
 }
-

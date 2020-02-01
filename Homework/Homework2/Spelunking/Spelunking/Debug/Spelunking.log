@@ -1,4 +1,3 @@
 ﻿  splunking.cpp
-D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Spelunking\splunking.cpp(198): warning C4715: 'Map::shoot': not all control paths return a value
-D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Spelunking\splunking.cpp(167): warning C4715: 'Map::movePlayer': not all control paths return a value
-  Spelunking.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Debug\Spelunking.exe
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Debug\Spelunking.exe : fatal error LNK1120: 1 unresolved externals
