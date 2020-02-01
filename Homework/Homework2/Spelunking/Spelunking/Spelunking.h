@@ -69,4 +69,22 @@ void Map::addPlayer()
         vacant.erase(std::find(vacant.begin(), vacant.end(), p1.getAdj(i)));
     }
 }
+
+//Spawns wumpus in a random room.
+void Map::addWumpus()
+{
+    int r = rand() % vacant.size();
+    cave[vacant[r]].wumpus = true;
+    vacant.erase(vacant.begin() + r); 
+}
+
+//Spawns bats
+void Map::addBats()
+{
+    for (int i = 0; i < BATS; ++i) {
+        int r = rand() % vacant.size();
+        cave[vacant[r]].bat = true;
+        vacant.erase(vacant.begin() + r);
+    }
+}
 #endif // !SPELUNKING_H
