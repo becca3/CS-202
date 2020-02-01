@@ -16,17 +16,17 @@ void printAnimal(const Animal& val)
 	std::cout << "Health condition: " << val.health << std::endl;
 }
 
-//Animal hitbox_listFIFO(const list<Animal>& hitbox_list)
+//Animal Animal_listFIFO(const list<Animal>& Animal_list)
 //{
 //
 //}
 
-//Animal hitbox_listLIFO(const list<Animal>& hitbox_list)
+//Animal Animal_listLIFO(const list<Animal>& Animal_list)
 //{
 //
 //}
 
-//int hitbox_listInsertAndFind(const list<Animal>& hitbox_list, const int& hb_ID, const shared_ptr<Animal>& hb_ptr)
+//int Animal_listInsertAndFind(const list<Animal>& Animal_list, const int& val_ID, const shared_ptr<Animal>& val_ptr)
 //{
 //
 //}
