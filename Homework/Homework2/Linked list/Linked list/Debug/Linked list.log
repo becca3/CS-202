@@ -1,2 +1,7 @@
 ﻿  linked_list_main.cpp
-  Linked list.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Debug\Linked list.exe
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(30,41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(30,34): error C2143: syntax error: missing ',' before '<'
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(35,41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(35,34): error C2143: syntax error: missing ',' before '<'
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(40,47): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(40,40): error C2143: syntax error: missing ',' before '<'

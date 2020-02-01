@@ -2,73 +2,48 @@
 #include <string>
 #include <list>
 #include <memory>
-//#include <catch2/catch.hpp>	
+#include "Catch2.h"	
 
-//Struct of animals. 
+//Struct of animal data. 
 struct Animal
 {
-	std::string genus;
-	std::string zoo;
-	std::string food;
-	int id;
-	int age;
-	int amount;
+	int id = 0;
+	int age = 0;
+	int amount = 0;
+	int zoo = 0;
+	int food = 0;
+	int health = 0;
 
 	std::unique_ptr<Animal> next;
-	Animal(int id) : id{ id }, next{ nullptr } {}
-
-	~Animal();
 };
 
-//List struct to manage creation and deletion of nodes. 
+void printAnimal(const Animal& val)
+{
+	std::cout << "ID: " << val.id << std::endl;
+	std::cout << "Age: < " << val.age << std::endl;
+	std::cout << "Number of individuals: " << val.amount << std::endl;
+	std::cout << "Location of zoo: " << val.zoo << std::endl;
+	std::cout << "Food eaten: " << val.food << std::endl;
+	std::cout << "Health condition: " << val.health << std::endl;
+}
+
+//Animal hitbox_listFIFO(const list<Animal>& hitbox_list)
+//{
+//
+//}
+
+//Animal hitbox_listLIFO(const list<Animal>& hitbox_list)
+//{
+//
+//}
+
+//int hitbox_listInsertAndFind(const list<Animal>& hitbox_list, const int& hb_ID, const shared_ptr<Animal>& hb_ptr)
+//{
+//
+//}
 
 int main(int argc, char** argv)
 {
-	auto n0{ std::make_unique<Animal>(0) };
 	
-	auto n1{ std::make_unique<Animal>(1) };
-	n1->next = std::move(n0);
 	
-	auto n2{ std::make_unique<Animal>(2) };
-	n2->next = std::move(n1);
-
-	auto n3{ std::make_unique<Animal>(3) };
-	n3->next = std::move(n2);
-
-	auto n4{ std::make_unique<Animal>(4) };
-	n4->next = std::move(n3);
-
-	auto n5{ std::make_unique<Animal>(5) };
-	n5->next = std::move(n4);
-
-	for (int x = 0; x <= Animal.size())
-
-
-	//Initialisation of members in struct.
-	/*Animal polar_bear{ "Ursus", "Anchorage", "Seal", 1, 15, 2 };
-	Animal penguin{ "Aptenodytes", "Edinburgh", "Fish", 2, 7, 10 };
-	Animal ringed_seal{ "Pusa", "Aberdeen", "Fish", 3, 3, 3 };
-	Animal arctic_fox{ "Vulpes", "London", "Seal", 4, 2, 2 };
-	Animal albatross{ "Phoebetria", "Omaha", "Seal", 5, 4, 2 };
-	Animal walrus{ "Odobenus", "Toronto", "Seal", 6, 10, 2 };	*/
-	
-
-	//std::shared_ptr<Animal> polar_bear = std::make_shared<Animal>("Ursus");
-	
-	//Create node n0.
-
-	//Create node n1.
-
-	//Link node n0 to n1. And so on..
-
-
-	//Create an object of List struct.
-	
-
-	//Pushing elements to the head of the list. 
-	
-}
-
-Animal::~Animal()
-{
 }
