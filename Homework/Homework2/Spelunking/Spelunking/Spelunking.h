@@ -108,22 +108,22 @@ void Map::addPits()
 void Map::reportState()
 {
     std::cout << "You are in room " << p1.room() << std::endl;
-    std::cout << "Adjacent rooms are " << p1.getAdj(0) << ", " << p1.getAdj(1)
+    std::cout << "Adjacent rooms are " << "\n" << p1.getAdj(0) << ", " << p1.getAdj(1)
         << ", " << p1.getAdj(2) << std::endl;
 
     if (cave[p1.getAdj(0)].bat || cave[p1.getAdj(1)].bat || cave[p1.getAdj(2)].bat)
     {
-        std::cout << "Bats are near." << std::endl;
+        std::cout << "Bats are near. \n" << std::endl;
     }
 
     if (cave[p1.getAdj(0)].pit || cave[p1.getAdj(1)].pit || cave[p1.getAdj(2)].pit)
     {
-        std::cout << "You feel a cool draft." << std::endl;
+        std::cout << "You feel a cool draft. \n" << std::endl;
     }
 
     if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
     {
-        std::cout << "You can smell the Wumpus!!" << std::endl;
+        std::cout << "You can smell the Wumpus!! \n" << std::endl;
     }
 }
 
@@ -131,7 +131,7 @@ int Map::movePlayer(int pos)
 {
     if (pos != p1.getAdj(0) && pos != p1.getAdj(1) && pos != p1.getAdj(2))
     {
-        std::cout << "Nope. Choose an adjacent room." << std::endl;
+        std::cout << "Nope. Choose an adjacent room.\n" << std::endl;
         return 0;
     }
 
@@ -155,7 +155,7 @@ int Map::movePlayer(int pos)
 
     if (cave[p1.room()].bat) 
     {
-        std::cout << "A giant bat took you to another room!" << std::endl;
+        std::cout << "A giant bat took you to another room!\n" << std::endl;
         batEncounter();
         return 0;
     }
@@ -192,7 +192,7 @@ int Map::shoot(int target)
 {
     if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2)) 
     {
-        std::cout << "Nope. Please choose an ADJACENT room." << std::endl;
+        std::cout << "Nope. Please choose an ADJACENT room.\n" << std::endl;
         return 0;
     }
     if (cave[target].wumpus) 
@@ -253,8 +253,8 @@ int Map::input()
     char x = 0;
     int y = -1;
 
-    std::cout << "Type m (move) followed by room number e.g. m18, \n to move to another room." << std::endl;
-    std::cout << "Type s (shoot) followed by room number e.g. s18, \n to shoot an arrow to another room." << std::endl;
+    std::cout << "Type m (move) followed by room number e.g. m18, \n to move to another room.\n" << std::endl;
+    std::cout << "Type s (shoot) followed by room number e.g. s18, \n to shoot an arrow to another room.\n" << std::endl;
   
     while (1) 
     {
@@ -268,7 +268,7 @@ int Map::input()
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-            std::cout << "Invalid input. Type mXX(sXX) to move(shoot) to(at) room XX." << std::endl;
+            std::cout << "Invalid input. Type mXX(sXX) to move(shoot) to(at) room XX.\n" << std::endl;
         }
     }
     return (x == 'm') ? movePlayer(y) : shoot(y);
