@@ -237,4 +237,14 @@ void Map::init()
     for (int i = 0; i < 3; ++i)
         vacant.push_back(p1.getAdj(i));
 }
+
+//Play game.
+void Map::play()
+{
+    reportState();
+    while (input() != END_GAME) {
+        reportState();
+    }
+}
+
 #endif // !SPELUNKING_H
