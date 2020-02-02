@@ -6,6 +6,12 @@
 #include<algorithm>
 #include<limits>
 
+const int ROOMS = 20;
+const int BATS = 3;
+const int PITS = 3;
+
+const int END_GAME = -1;
+
 //Struct for creating the rooms. 
 struct Room
 {
@@ -106,12 +112,52 @@ void Map::reportState()
         << ", " << p1.getAdj(2) << std::endl;
 
     if (cave[p1.getAdj(0)].bat || cave[p1.getAdj(1)].bat || cave[p1.getAdj(2)].bat)
+    {
         std::cout << "Bats are near." << std::endl;
+    }
 
     if (cave[p1.getAdj(0)].pit || cave[p1.getAdj(1)].pit || cave[p1.getAdj(2)].pit)
+    {
         std::cout << "You feel a cool draft." << std::endl;
+    }
 
     if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
+    {
         std::cout << "You can smell the Wumpus!!" << std::endl;
+    }
+}
+
+int Map::movePlayer(int pos)
+{
+    if (pos != p1.getAdj(0) && pos != p1.getAdj(1) && pos != p1.getAdj(2))
+    {
+        std::cout << "Nope. Choose an adjacent room." << std::endl;
+        return 0;
+    }
+
+    cave[p1.room()].player = false;
+    cave[pos].player = true;
+
+    vacant.push_back(p1.room());
+    p1.setCurrRoom(pos);
+
+    if (cave[p1.room()].wumpus)
+    {
+        std::cout << "The Wumpus killed you! LOSER!" << std::endl;
+        return END_GAME;
+    }
+
+    if (cave[p1.room()].pit) 
+    {
+        std::cout << "You fell into a bottomless pit! LOSER." << std::endl;
+        return END_GAME;
+    }
+
+    if (cave[p1.room()].bat) 
+    {
+        std::cout << "A giant bat took you to another room!" << std::endl;
+        batEncounter();
+        return 0;
+    }
 }
 #endif // !SPELUNKING_H

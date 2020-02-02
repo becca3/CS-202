@@ -1,3 +1,5 @@
 ﻿  splunking.cpp
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Spelunking\Spelunking.h(162): warning C4715: 'Map::movePlayer': not all control paths return a value
+splunking.obj : error LNK2019: unresolved external symbol "private: void __thiscall Map::batEncounter(void)" (?batEncounter@Map@@AAEXXZ) referenced in function "private: int __thiscall Map::movePlayer(int)" (?movePlayer@Map@@AAEHH@Z)
 MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Debug\Spelunking.exe : fatal error LNK1120: 1 unresolved externals
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Spelunking\Debug\Spelunking.exe : fatal error LNK1120: 2 unresolved externals

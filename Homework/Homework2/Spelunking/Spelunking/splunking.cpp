@@ -7,12 +7,6 @@ Description: Hunt the Wumpus game for cs 202.
 
 #include "Spelunking.h"
 
-const int ROOMS = 20;
-const int BATS = 3;
-const int PITS = 3;
-
-const int END_GAME = -1;
-
 void Player::setAdjRooms()
 {
     int t = 2 + 2 * (currRoom & 1);
