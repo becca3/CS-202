@@ -166,12 +166,21 @@ int Map::moveWumpus()
 {
     int r = rand() % 3;
     int pos = 0;
+
     for (; !(cave[pos].wumpus); ++pos); 
-    cave[pos].wumpus = false;
+    {
+        cave[pos].wumpus = false;
+    }
+
     if ((cave[pos].wumpus && !(cave[pos].bat)) || (cave[pos].wumpus && !(cave[pos].pit)))
+    {
         vacant.push_back(pos);
+    }
+
     cave[cave[pos].adjRooms[r]].wumpus = true;
-    if (cave[cave[pos].adjRooms[r]].player) {
+
+    if (cave[cave[pos].adjRooms[r]].player) 
+    {
         std::cout << "The Wumpus got you! LOSER!" << std::endl;
         return END_GAME;
     }
@@ -181,15 +190,31 @@ int Map::moveWumpus()
 //Shoot the Wumpus.
 int Map::shoot(int target)
 {
-    if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2)) {
+    if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2)) 
+    {
         std::cout << "Nope. Please choose an ADJACENT room." << std::endl;
         return 0;
     }
-    if (cave[target].wumpus) {
+    if (cave[target].wumpus) 
+    {
         std::cout << "You killed the Wumpus! YOU WIN!" << std::endl;
         return END_GAME;
     }
     else if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
         return moveWumpus();
+}
+
+//What happens in a bat encounter.
+void Map::batEncounter()
+{
+    int r = rand() % vacant.size();
+
+    cave[p1.room()].player = false;
+    vacant.push_back(p1.room());
+
+    cave[vacant[r]].player = true;
+    p1.setCurrRoom(vacant[r]);
+
+    vacant.erase(vacant.begin() + r);
 }
 #endif // !SPELUNKING_H
