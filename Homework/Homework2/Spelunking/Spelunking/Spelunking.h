@@ -160,4 +160,36 @@ int Map::movePlayer(int pos)
         return 0;
     }
 }
+
+//Move wumpus to random adjacent room.
+int Map::moveWumpus()
+{
+    int r = rand() % 3;
+    int pos = 0;
+    for (; !(cave[pos].wumpus); ++pos); 
+    cave[pos].wumpus = false;
+    if ((cave[pos].wumpus && !(cave[pos].bat)) || (cave[pos].wumpus && !(cave[pos].pit)))
+        vacant.push_back(pos);
+    cave[cave[pos].adjRooms[r]].wumpus = true;
+    if (cave[cave[pos].adjRooms[r]].player) {
+        std::cout << "The Wumpus got you! LOSER!" << std::endl;
+        return END_GAME;
+    }
+    return 0;
+}
+
+//Shoot the Wumpus.
+int Map::shoot(int target)
+{
+    if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2)) {
+        std::cout << "Nope. Please choose an ADJACENT room." << std::endl;
+        return 0;
+    }
+    if (cave[target].wumpus) {
+        std::cout << "You killed the Wumpus! YOU WIN!" << std::endl;
+        return END_GAME;
+    }
+    else if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
+        return moveWumpus();
+}
 #endif // !SPELUNKING_H
