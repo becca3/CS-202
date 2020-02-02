@@ -217,4 +217,24 @@ void Map::batEncounter()
 
     vacant.erase(vacant.begin() + r);
 }
+
+//Set map up. Place player, bats, pits and wumpus.
+void Map::init()
+{
+    for (int i = 0; i < ROOMS; ++i) {
+        int t = 2 + 2 * (i & 1);
+        cave[i].adjRooms[0] = ROOMS - 1 - i;
+        cave[i].adjRooms[1] = (i + t) % ROOMS;
+        cave[i].adjRooms[2] = (i - t + 20) % ROOMS;
+        vacant.push_back(i);
+    }
+
+    addPlayer();
+    addWumpus();
+    addBats();
+    addPits();
+
+    for (int i = 0; i < 3; ++i)
+        vacant.push_back(p1.getAdj(i));
+}
 #endif // !SPELUNKING_H
