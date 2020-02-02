@@ -247,4 +247,31 @@ void Map::play()
     }
 }
 
+//Allows user input.
+int Map::input()
+{
+    char x = 0;
+    int y = -1;
+
+    std::cout << "Type m (move) followed by room number e.g. m18, \n to move to another room." << std::endl;
+    std::cout << "Type s (shoot) followed by room number e.g. s18, \n to shoot an arrow to another room." << std::endl;
+  
+    while (1) 
+    {
+        std::cout << "Enter action: ";
+        if (std::cin >> x >> y)
+        {
+            break;
+        }
+
+        else if (std::cin.fail() || (x != 'm' && x != 's'))
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+            std::cout << "Invalid input. Type mXX(sXX) to move(shoot) to(at) room XX." << std::endl;
+        }
+    }
+    return (x == 'm') ? movePlayer(y) : shoot(y);
+}
+
 #endif // !SPELUNKING_H
