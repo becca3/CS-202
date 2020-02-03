@@ -6,6 +6,7 @@
 #include <memory>
 #include <algorithm>
 
+//Prints list of data for animals. 
 void printAnimal(const Animal& val)
 {
 	std::cout << "ID: " << val.id << std::endl;
@@ -16,6 +17,7 @@ void printAnimal(const Animal& val)
 	std::cout << "Health condition: " << val.health << std::endl;
 }
 
+//Prints the animals in the list. 
 void printanimal_list(std::list<Animal>& animal_list)
 {
 	auto iter = animal_list.begin();
@@ -23,6 +25,21 @@ void printanimal_list(std::list<Animal>& animal_list)
 	{
 		printAnimal(*iter);
 		++iter;
+	}
+}
+
+//Checks to see if any values in the struct are equal. 
+bool operator == (const Animal& val1, const Animal& val2)
+{
+	if ((val1.id == val2.id) && (val1.age == val2.age) &&
+		(val1.amount == val2.amount) && (val1.zoo == val2.zoo) &&
+		(val1.food == val2.food) && (val1.health == val2.health))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
