@@ -1,2 +1,9 @@
 ﻿  linked_list_main.cpp
-  Linked list.vcxproj -> D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Debug\Linked list.exe
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(72,24): error C2065: 'list': undeclared identifier
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(72,29): error C2275: 'Animal': illegal use of this type as an expression
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list.h(5): message : see declaration of 'Animal'
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(72,38): error C2065: 'animal_list': undeclared identifier
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(73,1): error C2448: 'animal_listLIFO': function-style initializer appears to be a function definition
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(96,28): error C2065: 'make_shared': undeclared identifier
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list_main.cpp(96,40): error C2275: 'Animal': illegal use of this type as an expression
+D:\C++ work\CS202\CS202 work\Homework\Homework2\Linked list\Linked list\linked_list.h(5): message : see declaration of 'Animal'

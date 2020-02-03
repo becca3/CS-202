@@ -54,7 +54,49 @@ bool operator == (const Animal& val1, const Animal& val2)
 	}
 }
 
+//FIFO function. 
+Animal animal_list_FIFO(std::list<Animal>& animal_list)
+{
+	if (!animal_list.empty())
+	{
+		Animal val;
+		copyAnimal(animal_list.front(), val);
+		animal_list.pop_front();
+		return val;
+	}
 
+	Animal val{ -1 };
+	return val;
+}
+
+Animal animal_listLIFO(std::list<Animal>& animal_list)
+{
+	if (!animal_list.empty())
+	{
+		Animal val;
+		copyAnimal(animal_list.back(), val);
+		animal_list.pop_back();
+		animal_list.back().next = nullptr;
+		return val;
+	}
+
+	Animal val{ -1 };
+	return val;
+}
+
+int animal_listInsertAndFind(std::list<Animal>& animal_list, Animal& val)
+{
+	auto iter = find(animal_list.begin(), animal_list.end(), val);
+	if (iter != animal_list.end())
+	{
+		int index = distance(animal_list.begin(), iter);
+		return index;
+	}
+
+	animal_list.back().next = std::make_shared<Animal>(val);
+	animal_list.push_back(val);
+	return -1;
+}
 
 int main(int argc, char** argv)
 {
