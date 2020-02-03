@@ -28,6 +28,17 @@ void printanimal_list(std::list<Animal>& animal_list)
 	}
 }
 
+//Copies value 1 to value 2. 
+void copyAnimal(Animal& val1, Animal& val2)
+{
+	val2.id = val1.id;
+	val2.age = val1.age;
+	val2.amount = val1.amount;
+	val2.zoo = val1.zoo;
+	val2.food = val1.food;
+	val2.health = val1.health;
+}
+
 //Checks to see if any values in the struct are equal. 
 bool operator == (const Animal& val1, const Animal& val2)
 {
