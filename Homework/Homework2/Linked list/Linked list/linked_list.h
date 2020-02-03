@@ -1,5 +1,5 @@
-#ifndef LINKED_LIST.H
-#define LINKED_LIST.H
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
 //Struct of animal data. 
 struct Animal
@@ -11,12 +11,10 @@ struct Animal
 	int food = 0;
 	int health = 0;
 
-	int value;
-	Animal* prev;
-	Animal* succ;
-	Animal(const int& v, Animal* p = nullptr, Animal* s = nullptr)
-		: value{ v }, prev{ p }, succ{ s } { }
+	std::shared_ptr<Animal> next = nullptr;
 };
+
+bool operator == (const Animal& hb1, const Animal& hb2);
 
 #endif // !LINKED_LIST.H
 

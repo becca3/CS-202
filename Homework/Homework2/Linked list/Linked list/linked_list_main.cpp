@@ -1,10 +1,10 @@
+#include "Catch2.h"
+#include "linked_list.h"
+
 #include <iostream>
-#include <string>
 #include <list>
 #include <memory>
-
-#include "linked_list.h"
-#include "Catch2.h"	
+#include <algorithm>
 
 void printAnimal(const Animal& val)
 {
@@ -16,23 +16,26 @@ void printAnimal(const Animal& val)
 	std::cout << "Health condition: " << val.health << std::endl;
 }
 
-//Animal Animal_listFIFO(const list<Animal>& Animal_list)
-//{
-//
-//}
+void printanimal_list(std::list<Animal>& animal_list)
+{
+	auto iter = animal_list.begin();
+	while (iter != animal_list.end())
+	{
+		printAnimal(*iter);
+		++iter;
+	}
+}
 
-//Animal Animal_listLIFO(const list<Animal>& Animal_list)
-//{
-//
-//}
 
-//int Animal_listInsertAndFind(const list<Animal>& Animal_list, const int& val_ID, const shared_ptr<Animal>& val_ptr)
-//{
-//
-//}
 
 int main(int argc, char** argv)
 {
-	
-	
+	std::list<Animal> animal_list;
+
+	Animal val{ 0, 10, 2, 3, 5, 100 };
+	Animal val1{ 1, 9, 1, 3, 5, 100 };
+	Animal val2{ 2, 12, 2, 2, 3, 80 };
+	Animal val3{ 3, 2, 4, 7, 1, 50 };
+
+	return 0;
 }
