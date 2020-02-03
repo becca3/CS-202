@@ -69,7 +69,7 @@ Animal animal_list_FIFO(std::list<Animal>& animal_list)
 	return val;
 }
 
-Animal animal_listLIFO(std::list<Animal>& animal_list)
+Animal animal_list_LIFO(std::list<Animal>& animal_list)
 {
 	if (!animal_list.empty())
 	{
@@ -106,6 +106,37 @@ int main(int argc, char** argv)
 	Animal val1{ 1, 9, 1, 3, 5, 100 };
 	Animal val2{ 2, 12, 2, 2, 3, 80 };
 	Animal val3{ 3, 2, 4, 7, 1, 50 };
+
+	val.next = std::make_shared<Animal>(val1);
+	val1.next = std::make_shared<Animal>(val2);
+	val2.next = std::make_shared<Animal>(val3);
+
+	animal_list.push_back(val);
+	animal_list.push_back(val1);
+	animal_list.push_back(val2);
+	animal_list.push_back(val3);
+
+	std::cout << "Current List: " << std::endl;
+	printanimal_list(animal_list);
+	std::cout << std::endl;
+
+	std::cout << "Demonstrating FIFO" << std::endl;
+	Animal val4 = animal_list_FIFO(animal_list);
+	std::cout << "Removed first Hitbox" << std::endl;
+	std::cout << "Current List: " << std::endl;
+	printanimal_list(animal_list);
+	std::cout << std::endl;
+
+	std::cout << "Demonstrating LIFO" << std::endl;
+	Animal val5 = animal_list_LIFO(animal_list);
+	std::cout << "Removed last Hitbox" << std::endl;
+	std::cout << "Current List: " << std::endl;
+	printanimal_list(animal_list);
+	std::cout << std::endl;
+
+	std::cout << "Removed Animals: " << std::endl;
+	printAnimal(val4);
+	printAnimal(val5);
 
 	return 0;
 }
