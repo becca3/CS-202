@@ -139,6 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="tokeniser.cpp" />
+    <ClCompile Include="tokeniser_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tokeniser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
