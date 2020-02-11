@@ -1,6 +1,16 @@
 #include<iostream>
+#include<fstream>
 
-int main(int argc, char** argv)
+int read_bin_value()
 {
-	return 0;
+    std::fstream bin_in("data.dat", std::ios_base::binary | std::ios::app | std::ios_base::in);
+    long long value;
+    bin_in.read((char*)&value, sizeof(int));
+    return value;
+}
+
+int main()
+{
+    std::cout << "Reading binary file value as integer: " << read_bin_value() << std::endl;
+    return 0;
 }

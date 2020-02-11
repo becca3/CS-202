@@ -8,18 +8,23 @@ Description: Command line tokeniser.
 #include "tokeniser.h"
 
 
-bool LineToTokens(const std::string& line,
-	std::vector<std::string>& tokens)
+//bool LineToTokens(const std::string& line,
+//	std::vector<std::string>& tokens)
+//{
+//
+//}
+
+//this is to pass file and cin
+//watch endianness in questions on doc
+//draw.io - good for flowcharts 
+
+bool ReadLine(std::istream& is,
+	std::vector<std::string>& tokens,
+	std::vector<std::pair<int, int>>& linecols)	
 {
 
+	return 0;
 }
-
-//bool ReadLine(std::istream& is,
-//	std::vector<std::string>& tokens,
-//	std::vector<std::pair<int, int>>& linecols)	
-//{
-//	return 0;
-//}
 
 //void PrintTokens(std::ostream& os,
 //	const std::vector<std::string>& tokens,
