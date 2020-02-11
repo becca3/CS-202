@@ -5,17 +5,16 @@ Date: 7th Feburary 2020
 Description: Command line tokeniser.
 */
 
-#include <iostream>
-#include <string>
-#include <vector>
-
 #ifndef TOKENISER_H
 #define TOKENISER_H
 
-#include <vector>
+
+#include <iostream>
 #include <string>
+#include <vector>
 #include <utility>
 
+//Functions.
 
 bool LineToTokens(const std::string& line, 
 	std::vector<std::string>& tokens);
