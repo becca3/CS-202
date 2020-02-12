@@ -1,16 +1,24 @@
 #include<iostream>
 #include<fstream>
 
-int read_bin_value()
-{
-    std::fstream bin_in("data.dat", std::ios_base::binary | std::ios::app | std::ios_base::in);
-    long long value;
-    bin_in.read((char*)&value, sizeof(int));
-    return value;
-}
-
 int main()
 {
-    std::cout << "Reading binary file value as integer: " << read_bin_value() << std::endl;
+	std::streampos size;
+	char* memblock;
+
+	std::ifstream fileName("data.dat", std::ios::in | std::ios::binary | std::ios::ate);
+
+	if (fileName.is_open())
+	{
+		size = fileName.tellg();
+		memblock = new char[size];
+		fileName.seekg(0, std::ios::beg);
+		fileName.read(memblock, size);
+		fileName.close();
+		std::cout << memblock;
+
+		delete[] memblock;
+	}
+
     return 0;
 }
