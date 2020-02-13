@@ -1,6 +1,5 @@
 #include "names.h"
 
-
 namespace fun
 {
 	void foo()
