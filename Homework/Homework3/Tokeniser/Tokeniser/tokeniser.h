@@ -1,30 +1,27 @@
 /*
-Program: Homework 3
-Author: Rebecca Morgan
-Date: 7th Feburary 2020
-Description: Command line tokeniser.
+program: homework 3
+author: rebecca morgan
+date: 7th feburary 2020
+description: command line tokeniser.
 */
 
 #ifndef TOKENISER_H
 #define TOKENISER_H
 
-
-#include <iostream>
 #include <string>
+#include <cstring>
+#include <sstream>
 #include <vector>
-#include <utility>
+#include <fstream>
+#include <iostream>
 
-//Functions.
+struct token
+{
+	std::string val;
+	std::size_t col;
+	std::size_t row;
 
-bool LineToTokens(const std::string& line, 
-	std::vector<std::string>& tokens);
+	token(const std::string& str, const std::size_t& c, const std::size_t& r);
+};
 
-bool ReadLine(std::istream& is, 
-	std::vector<std::string>& tokens,
-	std::vector<std::pair<int, int>>& linecols);
-
-void PrintTokens(std::ostream& os, 
-	const std::vector<std::string>& tokens,
-	const std::vector<std::pair<int, int>>& linecols);
-
-#endif
+#endif //TOKEN_HPP

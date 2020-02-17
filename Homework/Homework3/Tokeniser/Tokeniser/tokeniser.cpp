@@ -7,28 +7,47 @@ Description: Command line tokeniser.
 
 #include "tokeniser.h"
 
-
-//bool LineToTokens(const std::string& line,
-//	std::vector<std::string>& tokens)
-//{
-//
-//}
-
-//this is to pass file and cin
-//watch endianness in questions on doc
-//draw.io - good for flowcharts 
-
-bool ReadLine(std::istream& is,
-	std::vector<std::string>& tokens,
-	std::vector<std::pair<int, int>>& linecols)	
+token::token(const std::string& str, const std::size_t& c, const std::size_t& r)
 {
-
-	return 0;
+	val = str;
+	col = c;
+	row = r;
 }
 
-//void PrintTokens(std::ostream& os,
-//	const std::vector<std::string>& tokens,
-//	const std::vector<std::pair<int, int>>& linecols)
-//{
-//	return 0;
-//}
+void print_token(const token& t)
+{
+	std::cout << "Row " << t.row;
+	std::cout << ", Column " << t.col;
+	std::cout << ": \"" << t.val;
+	std::cout << "\"" << std::endl;
+}
+
+void print_tokens(const std::vector<token>& tokens)
+{
+	for (const token& t : tokens)
+		print_token(t);
+}
+
+void line_to_tokens(std::vector<token>& tokens, const std::string& line, const size_t& row)
+{
+	size_t col;
+	std::string str;
+	std::istringstream iline(line);
+
+	if (!line.empty())
+	{
+		while (!iline.eof())
+		{
+			iline >> str;
+
+			col = line.find(str) + 1;
+			token t(str, col, row);
+			tokens.push_back(t);
+		}
+	}
+	else //line.empty()
+	{
+		token t("Empty Line", 1, row);
+		tokens.push_back(t);
+	}
+}
