@@ -40,4 +40,19 @@ int main(int argc, char** argv)
 		}
 	}
 
+	if (iostream)
+	{
+		lines = get_input();
+
+		for (size_t i = 0; i < lines.size(); ++i)
+		{
+			line_to_tokens(tokens, lines[i], i + 1);
+		}
+
+		print_tokens(tokens);
+
+		return 0;
+	}
+
+	return 0;
 }

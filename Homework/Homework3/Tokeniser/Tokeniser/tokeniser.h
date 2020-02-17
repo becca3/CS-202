@@ -1,8 +1,8 @@
 /*
-program: homework 3
-author: rebecca morgan
-date: 7th feburary 2020
-description: command line tokeniser.
+Program: Homework 3
+Author: Rebecca Morgan
+Date: 7th Feburary 2020
+Description: Command line tokeniser.
 */
 
 #ifndef TOKENISER_H
@@ -24,4 +24,4 @@ struct token
 	token(const std::string& str, const std::size_t& c, const std::size_t& r);
 };
 
-#endif //TOKEN_HPP
+#endif //TOKENISER_H
