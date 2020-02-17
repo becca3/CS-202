@@ -76,3 +76,25 @@ std::vector<std::string> file_to_lines(const char* file)
 
 	return lines;
 }
+
+std::vector<std::string> get_input()
+{
+	std::string line;
+	std::vector<std::string> lines;
+	bool proceed = false;
+
+	while (!proceed)
+	{
+		std::cout << "Enter text. Type FIN to stop text entry." << std::endl;
+		std::getline(std::cin, line);
+
+		if (line != "FIN")
+		{
+			lines.push_back(line);
+		}
+		else
+			proceed = true;
+	}
+
+	return lines;
+}
