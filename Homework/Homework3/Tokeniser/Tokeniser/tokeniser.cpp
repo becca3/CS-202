@@ -51,3 +51,28 @@ void line_to_tokens(std::vector<token>& tokens, const std::string& line, const s
 		tokens.push_back(t);
 	}
 }
+
+bool does_file_exist(const char* file)
+{
+	std::ifstream ifile(file);
+	return ifile.good();
+}
+
+std::vector<std::string> file_to_lines(const char* file)
+{
+	std::string line;
+	std::ifstream ifile(file);
+	std::vector<std::string> lines;
+
+	while (!ifile.eof())
+	{
+		getline(ifile, line);
+
+		if (!ifile.eof())
+		{
+			lines.push_back(line);
+		}
+	}
+
+	return lines;
+}
