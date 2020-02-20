@@ -1,4 +1,5 @@
 #include <GLFW/glfw3.h>
+#include <cmath>
 
 #ifdef _WIN32 //Can also be _MSC_VER (uses Microsoft version)
 
@@ -30,25 +31,29 @@ int main(void) {
         GLfloat blue,
         GLfloat alpha);
 
-    void glColor3b(GLbyte red,
-        GLbyte green,
-        GLbyte blue);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
         /* Render here */
-        glClearColor(1, 0, 0, 1);
-
+        glClearColor(0, 0, 0.2, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glBegin(GL_TRIANGLES);
-        glColor3b(1.0f, 0.0f, 0.0f);
+        glColor3f(0.5f, 0.1f, 0.15f);
         glVertex3f(-1.0f, -1.0f, 0.0f); // bottom left
-        glColor3b(0.0f, 2.0f, 0.0f);
         glVertex3f(1.0f, -1.0f, 0.0f); // bottom right
-        glColor3b(0.0f, 0.0f, 1.0f);
         glVertex3f(0.0f, 1.0f, 0.0f); // middle top
         glEnd();
+
+        glLoadIdentity();
+        //Add no. in front of (float) to make it spin faster or slower.
+        float angle = (float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
+        float c = 0.1f * std::cos(angle * 3.14159f / 180.0f);
+        float s = 0.1f * std::cos(angle * 3.14159f / 180.0f);
+        glTranslatef(c, s, 0.1f);
+        glScalef(1 + c, 1 + s, 1.0f);
+        glRotatef(angle * 30.0f, 0.0f, 0.0f, 1.0f);
+
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
