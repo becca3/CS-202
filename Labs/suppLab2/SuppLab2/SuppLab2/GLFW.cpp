@@ -46,6 +46,16 @@ int main(void) {
         glEnd();
 
         glLoadIdentity();
+        glBegin(GL_LINE_LOOP);
+        for (float a = 0.0f; a < 360.0f; a += 1.0f) {
+            float c = std::cos(a * 3.14159f / 180.0f);
+            float s = std::sin(a * 3.14159f / 180.0f);
+            glColor3f(std::abs(c), std::abs(s), 0.0f);
+            glVertex3f(c, s, 0.0f);
+        }
+        glEnd();
+
+        glLoadIdentity();
         //Add no. in front of (float) to make it spin faster or slower.
         float angle = (float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
         float c = 0.1f * std::cos(angle * 3.14159f / 180.0f);
@@ -53,7 +63,6 @@ int main(void) {
         glTranslatef(c, s, 0.1f);
         glScalef(1 + c, 1 + s, 1.0f);
         glRotatef(angle * 30.0f, 0.0f, 0.0f, 1.0f);
-
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
