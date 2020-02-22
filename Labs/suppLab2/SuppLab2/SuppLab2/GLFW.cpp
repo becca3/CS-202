@@ -9,7 +9,8 @@
 
 #endif 
 
-int main(void) {
+int main(void) 
+{
     GLFWwindow* window;
 
     /* Initialize the library */
@@ -17,11 +18,22 @@ int main(void) {
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(800, 700, "Hello World", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
     }
+
+    //Resizes shapes after resizing of window 
+    int w = 1;
+    int h = 1;
+    glfwGetWindowSize(window, &w, &h);
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    double ar = (double)w / (double)h;
+    glOrtho(-ar, ar, -1, 1, -1, 1);
+    glMatrixMode(GL_MODELVIEW);
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
@@ -33,18 +45,21 @@ int main(void) {
 
 
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(window)) 
+    {
         /* Render here */
-        glClearColor(0, 0, 0.2, 0);
+        glClearColor(0.1f, 0.2f, 0.3f, 1.0f); //0, 1.5, 0.5, 0
         glClear(GL_COLOR_BUFFER_BIT);
 
+        //Draw a triangle.
         glBegin(GL_TRIANGLES);
-        glColor3f(0.5f, 0.1f, 0.15f);
+        glColor3f(0.3f, 0.4f, 0.90f);
         glVertex3f(-1.0f, -1.0f, 0.0f); // bottom left
         glVertex3f(1.0f, -1.0f, 0.0f); // bottom right
         glVertex3f(0.0f, 1.0f, 0.0f); // middle top
         glEnd();
 
+        //Draw a circle.
         glLoadIdentity();
         glBegin(GL_LINE_LOOP);
         for (float a = 0.0f; a < 360.0f; a += 1.0f) {
@@ -57,7 +72,7 @@ int main(void) {
 
         glLoadIdentity();
         //Add no. in front of (float) to make it spin faster or slower.
-        float angle = (float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
+        float angle = 0.5*(float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
         float c = 0.1f * std::cos(angle * 3.14159f / 180.0f);
         float s = 0.1f * std::cos(angle * 3.14159f / 180.0f);
         glTranslatef(c, s, 0.1f);
