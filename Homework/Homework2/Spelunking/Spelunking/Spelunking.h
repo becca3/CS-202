@@ -9,7 +9,7 @@
 const int ROOMS = 20;
 const int BATS = 3;
 const int PITS = 3;
-
+const int ARROWS = 5;
 const int END_GAME = -1;
 
 //Struct for creating the rooms. 
@@ -113,17 +113,17 @@ void Map::reportState()
 
     if (cave[p1.getAdj(0)].bat || cave[p1.getAdj(1)].bat || cave[p1.getAdj(2)].bat)
     {
-        std::cout << "Bats are near. \n" << std::endl;
+        std::cout << "Bats are near, YIKES! \n" << std::endl;
     }
 
     if (cave[p1.getAdj(0)].pit || cave[p1.getAdj(1)].pit || cave[p1.getAdj(2)].pit)
     {
-        std::cout << "You feel a cool draft. \n" << std::endl;
+        std::cout << "You feel a cool breeze, be careful! \n" << std::endl;
     }
 
     if (cave[p1.getAdj(0)].wumpus || cave[p1.getAdj(1)].wumpus || cave[p1.getAdj(2)].wumpus)
     {
-        std::cout << "You can smell the Wumpus!! \n" << std::endl;
+        std::cout << "You can smell the Wumpus!! Think carefully! \n" << std::endl;
     }
 }
 
@@ -189,13 +189,13 @@ int Map::moveWumpus()
 
 //Shoot the Wumpus.
 int Map::shoot(int target)
-{
-    if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2)) 
+{ 
+    if (target != p1.getAdj(0) && target != p1.getAdj(1) && target != p1.getAdj(2))
     {
         std::cout << "Nope. Please choose an ADJACENT room.\n" << std::endl;
         return 0;
     }
-    if (cave[target].wumpus) 
+    if (cave[target].wumpus)
     {
         std::cout << "You killed the Wumpus! YOU WIN!" << std::endl;
         return END_GAME;
@@ -221,7 +221,8 @@ void Map::batEncounter()
 //Set map up. Place player, bats, pits and wumpus.
 void Map::init()
 {
-    for (int i = 0; i < ROOMS; ++i) {
+    for (int i = 0; i < ROOMS; ++i) 
+    {
         int t = 2 + 2 * (i & 1);
         cave[i].adjRooms[0] = ROOMS - 1 - i;
         cave[i].adjRooms[1] = (i + t) % ROOMS;
@@ -242,7 +243,8 @@ void Map::init()
 void Map::play()
 {
     reportState();
-    while (input() != END_GAME) {
+    while (input() != END_GAME) 
+    {
         reportState();
     }
 }
@@ -253,8 +255,8 @@ int Map::input()
     char x = 0;
     int y = -1;
 
-    std::cout << "Type m (move) followed by room number e.g. m18, \n to move to another room.\n" << std::endl;
-    std::cout << "Type s (shoot) followed by room number e.g. s18, \n to shoot an arrow to another room.\n" << std::endl;
+    std::cout << "Type m (move) followed by room number e.g. m18, \nto move to another room.\n" << std::endl;
+    std::cout << "Type s (shoot) followed by room number e.g. s18, \nto shoot an arrow to another room.\n" << std::endl;
   
     while (1) 
     {
