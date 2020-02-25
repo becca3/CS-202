@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GLFW.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GLFWlab_refactor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="refactor.cpp">
+    <ClCompile Include="Program1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

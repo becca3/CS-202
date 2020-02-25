@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{45A2C55A-3193-46D0-81E9-37D25BA7497F}</ProjectGuid>
-    <RootNamespace>SuppLab2</RootNamespace>
+    <ProjectGuid>{A1631DC8-F9C6-429B-914C-8C00E9770ED6}</ProjectGuid>
+    <RootNamespace>staticlibc</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -135,13 +135,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GLFW.cpp" />
-    <ClCompile Include="GLFWlab_refactor.cpp" />
-    <ClCompile Include="refactor.cpp" />
+    <ClCompile Include="Program1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
