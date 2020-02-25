@@ -9,7 +9,7 @@
 
 #endif 
 
-int omain(void) 
+int main(void) 
 {
     GLFWwindow* window;
 
@@ -59,13 +59,15 @@ int omain(void)
         glVertex3f(0.0f, 1.0f, 0.0f); // middle top
         glEnd();
 
+
         //Draw a circle.
         glLoadIdentity();
         glBegin(GL_LINE_LOOP);
         for (float a = 0.0f; a < 360.0f; a += 1.0f) {
             float c = std::cos(a * 3.14159f / 180.0f);
             float s = std::sin(a * 3.14159f / 180.0f);
-            glColor3f(std::abs(c), std::abs(s), 0.0f);
+            glColor3f(std::abs(c), std::abs(s), 0.0f); //Rainbow circle.
+            //glColor3f(1.0f, 4.0f, 1.0f); //Change colour of circle.
             glVertex3f(c, s, 0.0f);
         }
         glEnd();

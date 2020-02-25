@@ -14,7 +14,7 @@ namespace {
 
 void HandleKeyCallback(GLFWwindow*, int, int, int, int);
 
-int main(void) {
+int omain(void) {
 	GLFWwindow* window;
 
 	// Initialize the library
