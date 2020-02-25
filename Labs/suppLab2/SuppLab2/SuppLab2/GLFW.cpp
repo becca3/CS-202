@@ -9,7 +9,7 @@
 
 #endif 
 
-int main(void) 
+int omain(void) 
 {
     GLFWwindow* window;
 
@@ -48,7 +48,7 @@ int main(void)
     while (!glfwWindowShouldClose(window)) 
     {
         /* Render here */
-        glClearColor(0.1f, 0.2f, 0.3f, 1.0f); //0, 1.5, 0.5, 0
+        glClearColor(0.1f, 0.2f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         //Draw a triangle.
