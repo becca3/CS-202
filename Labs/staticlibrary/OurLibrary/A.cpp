@@ -3,5 +3,5 @@
 
 void functionfromA()
 {
-	/*std::cout << "Hello World! \n";*/
+	std::cout << "Hello World! \n";
 }
