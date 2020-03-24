@@ -18,7 +18,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(900, 750, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(1000, 1000, "Hello World", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
@@ -48,12 +48,12 @@ int main(void)
     while (!glfwWindowShouldClose(window)) 
     {
         /* Render here */
-        glClearColor(0.1f, 0.2f, 0.3f, 1.0f);
+        glClearColor(0.5f, 0.2f, 2.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         //Draw a triangle.
         glBegin(GL_TRIANGLES);
-        glColor3f(0.3f, 0.4f, 0.90f);
+        glColor3f(0.8f, 2.0f, 0.90f);
         glVertex3f(-1.0f, -1.0f, 0.0f); // bottom left
         glVertex3f(1.0f, -1.0f, 0.0f); // bottom right
         glVertex3f(0.0f, 1.0f, 0.0f); // middle top
@@ -74,7 +74,7 @@ int main(void)
 
         glLoadIdentity();
         //Add no. in front of (float) to make it spin faster or slower.
-        float angle = 0.5*(float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
+        float angle = 1.0*(float)glfwGetTime(); // This GLFW function returns the time in seconds as a double
         float c = 0.1f * std::cos(angle * 3.14159f / 180.0f);
         float s = 0.1f * std::cos(angle * 3.14159f / 180.0f);
         glTranslatef(c, s, 0.1f);

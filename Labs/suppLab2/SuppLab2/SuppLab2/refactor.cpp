@@ -1,3 +1,2 @@
-#include "GLFW.cpp"
+//#include "GLFW.cpp"
 
-namespace
