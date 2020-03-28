@@ -6,6 +6,17 @@ Animals::Animals()
 	setName("Default");*/
 }
 
+//Setters
+void Animals::setAnimal(const std::string& Newanimal)
+{
+	animal_ = Newanimal;
+}
+
+void Animals::setName(const std::string& Newname)
+{
+	x_name_ = Newname;
+}
+
 std::ostream& operator<<(std::ostream& os, const Animals& animal)
 {
 	os << "Name:   " << animal.x_name() << "\n";
@@ -18,6 +29,7 @@ std::ostream& operator<<(std::ostream& os, const Animals& animal)
 //	setAnimal(animal_);
 //	setName("Default");
 //}
+
 //Animals::Animals(const Animals& type)
 //{
 //	setAnimal(type.x_name_);

@@ -17,15 +17,15 @@ public:
 	const std::string& x_name() const { return x_name_; }
 
 
-	/*Animals(std::string animal);
-	Animals(const Animals& type);
-	virtual ~Animals();
+	//Animals(std::string animal);
+	//Animals(const Animals& type);
+	//virtual ~Animals();
 
-	void setAnimal(std::string animal);
-	void setName(std::string name);
-	void getName(std::string& name);
+	void setAnimal(const std::string& Newanimal);
+	void setName(const std::string& Newname);
+	//void getName(std::string& name);
 
-	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);*/
+	//std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);*/
 
 private:
 	std::string animal_{ "Bear" };
