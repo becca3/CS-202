@@ -3,21 +3,21 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
-#include <sstream>
-#include <memory>
-#include <algorithm>
+//#include <vector>
+//#include <sstream>
+//#include <memory>
+//#include <algorithm>
 
 class Animals
 {
-private:
-
-	std::string animal_;
-	std::string x_name_;
-
 public:
 	Animals();
-	Animals(std::string animal);
+
+	const std::string& animal() const { return animal_; }
+	const std::string& x_name() const { return x_name_; }
+
+
+	/*Animals(std::string animal);
 	Animals(const Animals& type);
 	virtual ~Animals();
 
@@ -25,9 +25,14 @@ public:
 	void setName(std::string name);
 	void getName(std::string& name);
 
-	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);
+	std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);*/
+
+private:
+	std::string animal_{ "Bear" };
+	std::string x_name_{ "Polar" };
+
 };
 
-std::ostream& operator << (std::ostream& os, const Animals& animal);
+std::ostream& operator<<(std::ostream& os, const Animals& animal);
 
 #endif

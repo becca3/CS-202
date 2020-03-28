@@ -1,8 +1,14 @@
 #include "lab7.h"
+#include <iostream>
+#include <iomanip>
 
 int main(int argc, char** argv)
 {
-	Animals* aniPtr = new Animals();
+	const Animals animal; 
+	std::cout << animal << "\n";
+	return 0;
+
+	/*Animals* aniPtr = new Animals();
 	std::cout << "Made string ptr pointing to an animal: " << aniPtr << std::endl;
 
 	std::unique_ptr<Animals> bear = std::make_unique<Animals>();
@@ -20,5 +26,5 @@ int main(int argc, char** argv)
 		<< duck << std::endl;
 
 	delete aniPtr;
-	std::cout << "Delete pointer." << std::endl;
+	std::cout << "Delete pointer." << std::endl;*/
 }
