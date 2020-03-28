@@ -13,6 +13,14 @@ Complex Complex::operator+(const Complex complex)
 		imag_ + complex.imag_);
 }
 
+//My subtraction operator
+Complex& Complex::operator-=(const Complex complex)
+{
+	Complex(real_ -= complex.real_,
+		imag_ -= complex.imag_);
+	return *this;
+}
+
 Complex& Complex::operator+=(const Complex complex)
 {
 	*this = *this + complex;

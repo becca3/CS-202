@@ -11,6 +11,7 @@ public:
 
 	Complex operator+(const Complex complex);
 	Complex& operator+=(const Complex complex); 
+	Complex& operator-=(const Complex complex);
 
 	double realSec() const { return real_; }
 	double imagSec() const { return imag_; }
