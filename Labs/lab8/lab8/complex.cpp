@@ -7,6 +7,12 @@ Complex::Complex(double real, double imag)
 
 }
 
+Complex Complex::operator+(const Complex complex)
+{
+	return Complex(real_ + complex.real_,
+		imag_ + complex.imag_);
+}
+
 std::ostream& operator<<(std::ostream& os, const Complex& complex)
 {
 	os << complex.realSec();
