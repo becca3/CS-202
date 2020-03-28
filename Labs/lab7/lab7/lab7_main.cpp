@@ -5,7 +5,13 @@
 int main(int argc, char** argv)
 {
 	const Animals animal; 
+
+	Animals animal2;
+	animal2.setAnimal("Walrus");
+	animal2.setName("Tusky");
+
 	std::cout << animal << "\n";
+	std::cout << animal2 << "\n";
 	return 0;
 
 	/*Animals* aniPtr = new Animals();

@@ -28,8 +28,8 @@ public:
 	//std::unique_ptr<Animals> animalMake(const std::string name, const std::string animal);*/
 
 private:
-	std::string animal_{ "Bear" };
-	std::string x_name_{ "Polar" };
+	std::string animal_{ "Polar Bear" };
+	std::string x_name_{ "Nanook" };
 
 };
 
