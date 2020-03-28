@@ -13,6 +13,8 @@ class Animals
 public:
 	Animals();
 
+	Animals& operator=(const Animals& other);
+
 	const std::string& animal() const { return animal_; }
 	const std::string& x_name() const { return x_name_; }
 

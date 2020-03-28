@@ -6,6 +6,14 @@ Animals::Animals()
 	setName("Default");*/
 }
 
+
+Animals& Animals::operator=(const Animals& other)
+{
+	animal_ = other.animal_;
+	x_name_ = other.x_name_;
+	return *this;
+}
+
 //Setters
 void Animals::setAnimal(const std::string& Newanimal)
 {
