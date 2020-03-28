@@ -10,6 +10,7 @@ public:
 	Complex(double real, double imag = 0);
 
 	Complex operator+(const Complex complex);
+	Complex& operator+=(const Complex complex); 
 
 	double realSec() const { return real_; }
 	double imagSec() const { return imag_; }
