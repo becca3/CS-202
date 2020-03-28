@@ -1,25 +1,42 @@
 #include "lab7.h"
 
-//Constructor.
-functions::functions()
+Animals::Animals()
 {
-	//std::cout << "Default constructor called \n";
+	setAnimal("Bear");
+	setName("Default");
+}
+Animals::Animals(std::string animal_)
+{
+	setAnimal(animal_);
+	setName("Default");
+}
+Animals::Animals(const Animals& type)
+{
+	setAnimal(type.x_name_);
+	setName(type.animal_);
+}
+void Animals::getName(std::string& name)
+{
+	name = animal_;
+}
+void Animals::setName(std::string name)
+{
+	animal_ = name;
+}
+void Animals::setAnimal(std::string animal_)
+{
+	x_name_ = animal_;
 }
 
-//Deconstructor.
-functions::~functions()
+Animals::~Animals()
 {
-	//std::cout << "Deconstructor called\n";
+
 }
 
-//Copy constructor.
-functions::functions(int a1, int b1)
+std::unique_ptr<Animals> Animals::animalMake(const std::string name, const std::string animal_)
 {
-	a = a1; b = b1;
-}
-
-//Pass by ref.
-functions::functions(int& x)
-{
-	std::cout << "Number is: " << x << "\n";
+	Animals x = Animals();
+	x.setAnimal(animal_);
+	x.setName(name);
+	return std::unique_ptr<Animals>(&x);
 }

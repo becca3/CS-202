@@ -18,7 +18,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(1000, 1000, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(500, 450, "Hello World", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
@@ -48,12 +48,12 @@ int main(void)
     while (!glfwWindowShouldClose(window)) 
     {
         /* Render here */
-        glClearColor(0.5f, 0.2f, 2.0f, 1.0f);
+        glClearColor(0.5f, 3.0f, 2.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         //Draw a triangle.
         glBegin(GL_TRIANGLES);
-        glColor3f(0.8f, 2.0f, 0.90f);
+        glColor3f(3.0f, 5.0f, 5.0f);
         glVertex3f(-1.0f, -1.0f, 0.0f); // bottom left
         glVertex3f(1.0f, -1.0f, 0.0f); // bottom right
         glVertex3f(0.0f, 1.0f, 0.0f); // middle top

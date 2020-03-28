@@ -2,25 +2,23 @@
 
 int main(int argc, char** argv)
 {
-	//Default and deconstructor.
-	functions();
-	functions d;
-	d.show();
+	Animals* aniPtr = new Animals();
+	std::cout << "Made string ptr pointing to an animal: " << aniPtr << std::endl;
 
-	//Copy constructor.
-	functions x2(5, 50);
-	functions x1 = x2; //Passes object by value.
-	std::cout << "x2.a = " << x2.geta() << ", x2.b = " << x2.getb() << "\n";
-	std::cout << "x1.a = " << x1.geta() << ", x1.b = " << x1.getb() << "\n";
+	std::unique_ptr<Animals> bear = std::make_unique<Animals>();
+	std::cout << "Made unique_ptr<Animals> bear pointing to a name for the bear: " << bear << std::endl;
 
-	//Pass by ref.
-	functions(y);
+	std::unique_ptr<Animals> newName = std::move(bear);
+	std::cout << "Made unique_ptr<Animals> newName which moved bear: " << newName << std::endl;
 
-	//Vector of objects.
-	std::vector<functions> nums;
-	for (int i = 0; i < 5; i++)
-	{
-		nums.push_back(functions());
-	}
-	return 0;
+	std::shared_ptr<Animals> goose = std::make_shared<Animals>("Bear");
+	std::cout << "Made shared_ptr<Animals> goose which made a shared pointer to the first animal: "
+		<< goose << std::endl;
+
+	std::shared_ptr<Animals> duck = goose;
+	std::cout << "Made shared_ptr<Animals> duck which made a shared pointer to the first animal: "
+		<< duck << std::endl;
+
+	delete aniPtr;
+	std::cout << "Delete pointer." << std::endl;
 }
