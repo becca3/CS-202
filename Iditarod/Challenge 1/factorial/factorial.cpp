@@ -26,6 +26,13 @@ int fact_loop(int n)
 
 int main()
 {
+    std::cout << "Recursive factorial: \n";
+    std::cout << "10 = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = " << fact(10) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Non-recursive factorial: \n";
+    std::cout << "10 = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = " << fact_loop(10) << std::endl;
 
     return 0;
 }
