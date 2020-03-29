@@ -22,6 +22,7 @@ int acker(int m, int n)
 
 int main()
 {
+	std::cout << "Ackerman: \n";
 	std::cout << acker(3, 1) << std::endl;
 	std::cout << acker(3, 4) << std::endl;
 	std::cout << acker(-1, -1) << std::endl;
