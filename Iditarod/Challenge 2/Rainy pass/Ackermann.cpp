@@ -19,3 +19,11 @@ int acker(int m, int n)
 
 	return -1;
 }
+
+int main()
+{
+	std::cout << "Ackermann \n";
+	std::cout << acker(3, 1000) << std::endl;
+
+	return 0;
+}
