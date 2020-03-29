@@ -1,4 +1,5 @@
 #include <iostream>
+#include "TimeIt1.h"
 
 int acker(int m, int n)
 {
@@ -23,7 +24,8 @@ int acker(int m, int n)
 int main()
 {
 	std::cout << "Ackermann \n";
-	std::cout << acker(3, 1000) << std::endl;
+	//This is the higest number my PC can handle!
+	std::cout << acker(3, 7) << std::endl;
 
 	return 0;
 }
