@@ -56,6 +56,13 @@ int fib_loop(int n)
 
 int main()
 {
+    std::cout << "Recursive Fibonacci \n";
+    int f = fib(20);
+
+    std::cout << std::endl;
+
+    std::cout << "Non-recursive Fibonacci \n";
+    int g = fib_loop(20);
 
     return 0;
 }
