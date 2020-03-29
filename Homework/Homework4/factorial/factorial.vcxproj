@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{E3685F28-4B6A-4B20-81F2-1A94C1153F48}</ProjectGuid>
-    <RootNamespace>RecursionProblems</RootNamespace>
+    <ProjectGuid>{46B68F35-EE8C-49BB-AC03-C4229A7A6191}</ProjectGuid>
+    <RootNamespace>factorial</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fibonacci.cpp" />
+    <ClCompile Include="factorial.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
