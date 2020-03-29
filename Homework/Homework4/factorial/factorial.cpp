@@ -1,17 +1,26 @@
 #include <iostream>
 
 //Recursive factorial
-int fact(int x)
+int fact(int n)
 {
-    if (x <= 1)
+    if (n <= 1)
     {
         return 1;
     }
 
-    return x * fact(x - 1);
+    return n * fact(n - 1);
 }
 
 //Non-recursive factorial
+int fact_loop(int n)
+{
+    int f = 1;
+
+    for (int i = n; i > 1; --i)
+        f *= i;
+
+    return f;
+}
 
 int main()
 {
