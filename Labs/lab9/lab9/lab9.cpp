@@ -29,8 +29,22 @@ public:
 		std::cout << polarBear_ << "\n";
 	}
 
+	static void writepolarBear()
+	{
+		std::cout << "Static " << polarBear_ << "\n";
+		//Cannot use a non-static num as shown below.
+		//std::cout << "Static " << animalNum_ << "\n";
+	}
+
+	static void writepolarBear(const Animal_stat& bear)
+	{
+		std::cout << "Static instance " << bear.animalNum_ << "\n";
+	}
+
 private:
+
 	int animalNum_;
+
 	//Static member variable.
 	static std::string polarBear_;
 };
@@ -62,6 +76,8 @@ void ani_static()
 	}
 
 	bear.printpolarBear();
+	bear.writepolarBear(bear);
+	Animal_stat::writepolarBear();
 }
 
 int main(int argc, char** argv)
@@ -76,6 +92,10 @@ int main(int argc, char** argv)
 	ani_static();
 
 	bear1.printpolarBear();
+
+	Animal_stat::writepolarBear(bear1);
+	Animal_stat::writepolarBear(bear2);
+
 	std::cout << "Leaving main\n";
 	return 0;
 }
