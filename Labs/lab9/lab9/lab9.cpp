@@ -35,7 +35,8 @@ public:
 		//Cannot use a non-static num as shown below.
 		//std::cout << "Static " << animalNum_ << "\n";
 	}
-
+	
+	//Static member variable. 
 	static void writepolarBear(const Animal_stat& bear)
 	{
 		std::cout << "Static instance " << bear.animalNum_ << "\n";
