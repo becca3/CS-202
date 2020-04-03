@@ -16,10 +16,18 @@ void functionB()
 void functionA()
 {
   // your code here
-  functionB();
+    try
+    {
+        functionB();
+        std::cout << "If you've reached this code, you've failed... \n";
+    }
+    catch (const std::exception & e)
+    {
+        // your code here
+        std::cout << "Caught an exception: " << e.what() << std::endl;
+    }
   // your code here
-  std::cout << "Caught an exception: " << e.what() << std::endl;
-  // your code here
+    std::cout << "If you've reached this code... You've succeeded! \n";
 }
 
 int main()
