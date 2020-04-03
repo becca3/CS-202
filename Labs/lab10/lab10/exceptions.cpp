@@ -3,6 +3,7 @@
 void functionC()
 {
   //your code here
+    throw std::runtime_error("FunctionC threw a runtime error.");
 }
 
 void functionB()
