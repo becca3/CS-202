@@ -1,5 +1,19 @@
 #include <iostream>
 
+class Testing
+{
+public:
+    Testing()
+    {
+        std::cout << "Testing constructed. \n";
+    }
+
+    ~Testing()
+    {
+        std::cout << "Testing destroyed. \n";
+    }
+};
+
 void functionC()
 {
   //your code here
@@ -8,12 +22,13 @@ void functionC()
 
 void functionB()
 {
-  //your code here
-  std::cout << "Starting functionB()\n";
-  functionC();
-  std::cout << "Ending functionB()\n";
+    Testing t1;
+    //your code here
+    std::cout << "Starting functionB()\n";
+    functionC();
+    std::cout << "Ending functionB()\n";
 }
-
+ 
 void functionA()
 {
   // your code here
