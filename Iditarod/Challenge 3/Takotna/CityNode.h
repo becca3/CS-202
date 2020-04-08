@@ -18,10 +18,10 @@ public:
 	double getXLongitude();
 
 private:
-	string cityName_;
-	unsigned int _nodeNumber_;
+	std::string cityName_;
+	unsigned int nodeNumber_;
 	double latitude_;
-	double longitutde_;
+	double longitude_;
 	double graphX_;
 	double graphY_;
 };
