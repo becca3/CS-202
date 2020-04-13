@@ -1,6 +1,9 @@
 #include "citylist.h"
 
-Citylist::Citylist() {}
+Citylist::Citylist() 
+{
+
+}
 
 Citylist::Citylist(CityNode node)
 {
