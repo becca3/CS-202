@@ -140,11 +140,13 @@
   <ItemGroup>
     <ClCompile Include="citylist.cpp" />
     <ClCompile Include="CityNode.cpp" />
+    <ClCompile Include="cpath.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="citylist.h" />
     <ClInclude Include="CityNode.h" />
+    <ClInclude Include="cpath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

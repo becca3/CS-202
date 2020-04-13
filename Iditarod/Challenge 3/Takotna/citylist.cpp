@@ -72,3 +72,8 @@ double Citylist::distance(int first, int second)
 
     return d;
 }
+
+int Citylist::citylistSize()
+{
+    return _cityList.size();
+}

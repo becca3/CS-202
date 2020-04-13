@@ -45,6 +45,8 @@ public:
     //returns _longitude from CityNode
     double getCityLon(int node);
 
+    int citylistSize();
+
 private:
     std::vector<CityNode> _cityList;
     std::string _fileName;
