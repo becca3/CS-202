@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "CityNode.h"
 #include <cmath>
+
+#include "CityNode.h"
 
 class Citylist
 {
@@ -13,7 +14,7 @@ public:
     //Default Constructor
     Citylist();
 
-    //Constructor automatically adding node to _cityList vector
+    //Constructor adding node to _cityList vector
     Citylist(CityNode node);
 
     //Adds node to _cityList vector
@@ -24,7 +25,7 @@ public:
 
     /*Prints specific vector position of _cityList depending
       on node you want printed*/
-    void printSpecCityNode(unsigned int node);
+    void printSpecificCityNode(unsigned int node);
 
     //Sets file/city name
     void setFileName(std::string name);
@@ -32,7 +33,7 @@ public:
     //returns _fileName
     std::string getFileName();
 
-    //Returns Euclidean distance between two cities (node 1 & node 2).
+    //Returns Euclidean distance between two cities.
     double distance(int first, int second);
 
     //returns _nodeNumber from CityNode
