@@ -13,7 +13,7 @@ public:
     void SolveRandomly();
     void SolveGreedy(Citylist &list, Citypath &path);
     void SolveMyWay();
-    unsigned int getRandInt(int low, int high);
+    unsigned int getRandomInt(int low, int high);
 
 private:
 

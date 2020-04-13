@@ -1,6 +1,6 @@
 #include "solveTSP.h"
 
-unsigned int TSPSolver::getRandInt(int low, int high)
+unsigned int TSPSolver::getRandomInt(int low, int high)
 {
     std::random_device rd;
     std::mt19937 gen1(rd());
