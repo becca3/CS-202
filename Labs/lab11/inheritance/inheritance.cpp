@@ -36,6 +36,11 @@ public:
 		std::cout << "Constructing derived object, name is " << name_ << "\n";
 	}
 
+	Derived(int age, const std::string& name) : Base{ age }, name_{ name }
+	{
+		std::cout << "Constructing a derived object with name " << name_ << "\n";
+	}
+
 	~Derived()
 	{
 		std::cout << "Deconstructing the derived object with name " << name_ << "\n";
@@ -56,5 +61,7 @@ int main(int argc, char** argv)
 	{ Derived b; }
 	std::cout << "\n";
 
+	{ Derived b{ 80, "Matt" }; }
+	std::cout << "\n";
 	return 0;
 }
