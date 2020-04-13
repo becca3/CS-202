@@ -110,31 +110,31 @@ int main(int argc, char** argv)
     readfile("brd14051.tsp", node0, brd);
 
     //Make Citylist for DSJ1000
-    //Citylist ds;
-    //readfile("dsj1000.tsp", node0, ds);
+    Citylist ds;
+    readfile("dsj1000.tsp", node0, ds);
 
-    ////Make Citylist for PLA85900
-    //Citylist pla;
-    //readfile("pla85900.tsp", node0, pla);
+    //Make Citylist for PLA85900
+    Citylist pla;
+    readfile("pla85900.tsp", node0, pla);
 
-    ////Make Citylist for PR1002
-    //Citylist pr;
-    //readfile("pr1002.tsp", node0, pr);
+    //Make Citylist for PR1002
+    Citylist pr;
+    readfile("pr1002.tsp", node0, pr);
 
-    ////Make Citylist for USA13509
-    //Citylist usa;
-    //readfile("usa13509.tsp", node0, usa);
+    //Make Citylist for USA13509
+    Citylist usa;
+    readfile("usa13509.tsp", node0, usa);
 
     brd.printCityNodes();
-   /* ds.printCityNodes();
+    ds.printCityNodes();
     pla.printCityNodes();
     pr.printCityNodes();
-    usa.printCityNodes();*/
+    usa.printCityNodes();
 
-    //pr.printSpecificCityNode(1300);
+    pr.printSpecificCityNode(1300);
 
-    //std::cout << "Distance from node 1 and node 20 in rl: " << pr.distance(1, 20)
-       // << std::endl;
+    std::cout << "Distance from node 1 and node 20 in pr: " << pr.distance(1, 20)
+       << std::endl;
 
     return 0;
 }
