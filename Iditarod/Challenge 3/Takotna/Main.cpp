@@ -41,7 +41,7 @@ void readfile(std::string fileName, CityNode& node, Citylist& city)
             else
             {
                 getline(ifile, line);
-                std::string nodeStart = "NODE COORDINATES";
+                std::string nodeStart = "NODE_COORD_SECTION";
 
                 //Start node listing
                 if (line == nodeStart)
@@ -103,6 +103,38 @@ void readfile(std::string fileName, CityNode& node, Citylist& city)
 
 int main(int argc, char** argv)
 {
+    CityNode node0(0, 0, 0);
 
-	return 0;
+    //Make Citylist for BRD14051
+    Citylist brd;
+    readfile("brd14051.tsp", node0, brd);
+
+    //Make Citylist for DSJ1000
+    //Citylist ds;
+    //readfile("dsj1000.tsp", node0, ds);
+
+    ////Make Citylist for PLA85900
+    //Citylist pla;
+    //readfile("pla85900.tsp", node0, pla);
+
+    ////Make Citylist for PR1002
+    //Citylist pr;
+    //readfile("pr1002.tsp", node0, pr);
+
+    ////Make Citylist for USA13509
+    //Citylist usa;
+    //readfile("usa13509.tsp", node0, usa);
+
+    brd.printCityNodes();
+   /* ds.printCityNodes();
+    pla.printCityNodes();
+    pr.printCityNodes();
+    usa.printCityNodes();*/
+
+    //pr.printSpecificCityNode(1300);
+
+    //std::cout << "Distance from node 1 and node 20 in rl: " << pr.distance(1, 20)
+       // << std::endl;
+
+    return 0;
 }
