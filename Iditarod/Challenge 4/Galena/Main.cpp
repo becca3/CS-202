@@ -138,10 +138,16 @@ int main(int argc, char** argv)
     std::cout << "Distance from node 1 and node 20 in pr: " << pr.distance(1, 20)
        << std::endl;*/
 
-    Citypath brdPath;
-    TSPSolver brdSolve;
+    //Citypath brdPath;
+    //TSPSolver brdSolve;
     //brdSolve.SolveGreedy(brd, brdPath);
-    brdSolve.SolveRandomly();
+   
+    Citylist test;
+    readfile("testing.tsp", node0, test);
+
+    Citypath testPath;
+    TSPSolver testSolve;
+    testSolve.SolveGreedy(test, testPath);
 
     return 0;
 }
