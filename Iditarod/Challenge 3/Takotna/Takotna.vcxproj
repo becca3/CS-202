@@ -142,13 +142,11 @@
     <ClCompile Include="CityNode.cpp" />
     <ClCompile Include="cpath.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="solveTSP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="citylist.h" />
     <ClInclude Include="CityNode.h" />
     <ClInclude Include="cpath.h" />
-    <ClInclude Include="solveTSP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

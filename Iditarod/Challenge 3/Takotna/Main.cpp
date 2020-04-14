@@ -127,7 +127,7 @@ int main(int argc, char** argv)
     //Citylist usa;
     //readfile("usa13509.tsp", node0, usa);
 
-    //brd.printCityNodes();
+    brd.printCityNodes();
     /*ds.printCityNodes();
     pla.printCityNodes();
     pr.printCityNodes();
@@ -137,10 +137,6 @@ int main(int argc, char** argv)
 
     std::cout << "Distance from node 1 and node 20 in pr: " << pr.distance(1, 20)
        << std::endl;*/
-
-    Citypath brdPath;
-    TSPSolver brdSolve;
-    brdSolve.SolveGreedy(brd, brdPath);
 
     return 0;
 }

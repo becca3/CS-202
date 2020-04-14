@@ -27,9 +27,6 @@
     <ClCompile Include="cpath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="solveTSP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CityNode.h">
@@ -39,9 +36,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cpath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="solveTSP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

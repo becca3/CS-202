@@ -140,7 +140,8 @@ int main(int argc, char** argv)
 
     Citypath brdPath;
     TSPSolver brdSolve;
-    brdSolve.SolveGreedy(brd, brdPath);
+    //brdSolve.SolveGreedy(brd, brdPath);
+    brdSolve.SolveRandomly();
 
     return 0;
 }

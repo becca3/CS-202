@@ -21,3 +21,18 @@ void Citypath::printCityPath()
         std::cout << a << std::endl;
     }
 }
+
+int Citypath::cpathSize()
+{
+    return connections_.size();
+}
+
+int Citypath::pathVectorSpecific(int n)
+{
+    return connections_[n];
+}
+
+void Citypath::BackPath()
+{
+    connections_.pop_back();
+}

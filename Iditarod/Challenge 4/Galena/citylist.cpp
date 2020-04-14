@@ -85,3 +85,13 @@ int Citylist::citylistSize()
 {
     return _cityList.size();
 }
+
+int Citylist::listVectorSpecific(int n)
+{
+    return _cityList[n].getNodeNo();
+}
+
+void Citylist::removeCityList(int node)
+{
+    _cityList.erase(_cityList.begin() + node);
+}

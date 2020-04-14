@@ -9,21 +9,24 @@
 class Citypath
 {
 public:
-    //Default Constructor
+    //Default Constructor.
     Citypath();
 
-    //Constructor automatically adding node to _connections vector
     Citypath(CityNode node);
 
-    //Adds node to _cityList vector
+    //Adds node to citylist vector.
     void setCityPath(CityNode node);
 
-    //Prints _connections to terminal
+    //Prints connections to terminal.
     void printCityPath();
 
+    int cpathSize();
+
+    int pathVectorSpecific(int n);
+
+    void BackPath();
 
 private:
-    //Stores optimal connections from city to city (vector<CityNode> _cityList)
     std::vector<int> connections_;
 };
 
