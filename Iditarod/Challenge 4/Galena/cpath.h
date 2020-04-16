@@ -34,7 +34,7 @@ public:
     void Setconnections(std::vector<int>& vec);
 
 private:
-    //Stores optimal connections from city to city (vector<CityNode> _cityList)
+
     std::vector<int> connections_;
 
     int _size;

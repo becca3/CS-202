@@ -107,9 +107,9 @@ int main(int argc, char** argv)
 {
     CityNode node0(0, 0, 0);
 
-    //Make Citylist for BRD14051
-    Citylist brd;
-    readfile("brd14051.tsp", node0, brd);
+    ////Make Citylist for BRD14051
+    //Citylist brd;
+    //readfile("brd14051.tsp", node0, brd);
 
     ////Make Citylist for DSJ1000
     //Citylist ds;
@@ -133,21 +133,20 @@ int main(int argc, char** argv)
     pr.printCityNodes();
     usa.printCityNodes();*/
 
-    /*pr.printSpecificCityNode(1300);
-
-    std::cout << "Distance from node 1 and node 20 in pr: " << pr.distance(1, 20)
-       << std::endl;*/
-
-    //Citypath brdPath;
-    //TSPSolver brdSolve;
-    //brdSolve.SolveGreedy(brd, brdPath);
-   
     Citylist test;
     readfile("testing.tsp", node0, test);
 
     Citypath testPath;
     TSPSolver testSolve;
+
+    std::cout << "Solve Greedy: \n";
     testSolve.SolveGreedy(test);
+
+    std::cout << "Solve Randomly: \n";
+    testSolve.SolveRandomly(test);
+
+    std::cout << "Solved my way: \n";
+    testSolve.SolveMyWay(test);
 
     return 0;
 }

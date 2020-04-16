@@ -143,3 +143,25 @@ void TSPSolver::SolveGreedy(Citylist& list)
     std::cout << marked.Getpath(marked.size() - 1) << std::endl;
     std::cout << "Total distance - " << dist << std::endl;
 }
+
+void TSPSolver::SolveMyWay(Citylist& list)
+{
+    // Connect cities in node order (ending with starting node)
+    Citypath marked;
+
+    for (int i = 0; i < list.citylistSize(); i++)
+    {
+        marked.Addpath(i);
+    }
+
+    int dist = 0;
+    std::cout << "Path traveled: ";
+    for (int i = 0; i < marked.size() - 1; i++)
+    {
+        dist += list.distance(marked.Getpath(i), marked.Getpath(i + 1));
+        std::cout << marked.Getpath(i) << " ";
+    }
+    std::cout << marked.Getpath(marked.size() - 1) << std::endl;
+    std::cout << "Total: " << dist << std::endl;
+
+}
