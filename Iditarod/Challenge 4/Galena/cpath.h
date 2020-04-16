@@ -10,24 +10,34 @@ class Citypath
 {
 public:
     //Default Constructor.
-    Citypath();
+public:
+    Citypath(const int& s);
 
-    Citypath(CityNode node);
+    Citypath() : _size(0) {};
 
-    //Adds node to citylist vector.
-    void setCityPath(CityNode node);
+    int citypathSize();
 
-    //Prints connections to terminal.
-    void printCityPath();
+    Citypath(Citypath& copy) { connections_ = copy.connections_; };
 
-    int cpathSize();
+    int Getpath(const int& n) const;
 
-    int pathVectorSpecific(int n);
+    void Addpath(const int& n);
 
-    void BackPath();
+    void Deletepath(const int& n);
+
+    void DeleteallPaths();
+
+    int size() const { return connections_.size(); }
+
+    std::vector<int> get_connections();
+
+    void Setconnections(std::vector<int>& vec);
 
 private:
+    //Stores optimal connections from city to city (vector<CityNode> _cityList)
     std::vector<int> connections_;
+
+    int _size;
 };
 
 #endif

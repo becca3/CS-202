@@ -1,4 +1,5 @@
 #include "solveTSP.h"
+#include "citylist.h"
 
 unsigned int TSPSolver::getRandomInt(int low, int high)
 {
@@ -21,44 +22,27 @@ void TSPSolver::SolveRandomly()
     double bestDist = 1e12;
 
     int m = 10;
-}
 
-void TSPSolver::SolveGreedy(Citylist& list, Citypath& path)
-{
-    //Set starting city.
-    int high = list.citylistSize();
-    int startNode = getRandomInt(0, high);
-    path.setCityPath(list.getCityNode(startNode));
-
-    int totalDist = 0;
-    
-    int cityPathNumber = 1;
-    while (cityPathNumber != list.citylistSize())
+    for (int x = 0; x < m; x++)
     {
-        int n = path.cpathSize() - 1;
-
-        //list.removeCityList(n);
-        
-        int bestDist = 1e12;
+        holder.clear();
+        dist = 0;
+        unmarked.DeleteallPaths();
+   
         for (int i = 0; i < list.citylistSize(); i++)
         {
-            int dist = list.distance(path.pathVectorSpecific(n),
-                list.listVectorSpecific(i));
-            std::cout << dist << " traveled.\n";
-
-            if (dist < bestDist)
-            {
-                if (path.cpathSize() != cityPathNumber)
-                {
-                    path.BackPath();
-                }
-                bestDist = dist;
-                path.setCityPath(list.getCityNode(i));
-            }
+            unmarked.Addpath(i);
         }
-        totalDist += bestDist;
-        cityPathNumber++;
+        
+        holder.clear();
 
+        //Starting city.
+        int startNode = getRandomInt(0, list.citylistSize() - 1);
+
+        //Add city to holder.
+        holder.push_back(startNode);
+
+        unmarked.Deletepath(startNode);
     }
 
     std::cout << "Solve Greedy contains " << path.cpathSize() << " cities.\n"

@@ -1,4 +1,5 @@
 #include "citylist.h"
+#include "solveTSP.h"
 
 Citylist::Citylist() 
 {
