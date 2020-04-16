@@ -79,3 +79,67 @@ void TSPSolver::SolveRandomly(Citylist &list)
     std::cout << marked.Getpath(marked.size() - 1) << std::endl;
     std::cout << "Total distance: " << dist << std::endl;
 }
+
+void TSPSolver::SolveGreedy(Citylist& list)
+{
+    Citypath marked;
+    Citypath unmarked;
+
+    for (int i = 0; i < list.citylistSize(); i++)
+    {
+        unmarked.Addpath(i);
+    }
+
+    //Starting distance.
+    double dist = 0;
+
+    //Starting city.
+    int startNode = getRandomInt(0, list.citylistSize() - 1);
+
+    marked.Addpath(startNode);
+
+    unmarked.Deletepath(startNode);
+
+    int small;
+    int del;
+
+    for (int i = 0; i < list.citylistSize(); i++)
+    {
+        dist = 1e12;
+
+        //Last city.
+        if (unmarked.size() == 1)
+        {
+            marked.Addpath(unmarked.Getpath(0));
+            unmarked.Deletepath(0);
+            break;
+        }
+
+        for (auto z = 0; z < unmarked.citypathSize(); z++)
+        {
+            if (dist > list.distance(marked.Getpath(i), unmarked.Getpath(z)))
+            {
+                dist = list.distance(marked.Getpath(i), unmarked.Getpath(z));
+
+                small = unmarked.Getpath(z);
+                del = z;
+            }
+        }
+
+        marked.Addpath(small);
+        unmarked.Deletepath(del);
+
+    }
+
+    marked.Addpath(marked.Getpath(0));
+
+    dist = 0;
+    std::cout << "Path traveled - ";
+    for (int i = 0; i < marked.size() - 1; i++)
+    {
+        dist += list.distance(marked.Getpath(i), marked.Getpath(i + 1));
+        std::cout << marked.Getpath(i) << " ";
+    }
+    std::cout << marked.Getpath(marked.size() - 1) << std::endl;
+    std::cout << "Total distance - " << dist << std::endl;
+}

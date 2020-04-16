@@ -147,7 +147,7 @@ int main(int argc, char** argv)
 
     Citypath testPath;
     TSPSolver testSolve;
-    testSolve.SolveGreedy(test, testPath);
+    testSolve.SolveGreedy(test);
 
     return 0;
 }

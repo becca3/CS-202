@@ -11,21 +11,21 @@
 class Citylist
 {
 public:
-    //Default Constructor
+    //Default Constructor.
     Citylist();
 
-    //Constructor adding node to citylist vector
+    //Constructor adding node to citylist vector.
     Citylist(CityNode node);
 
-    //Adds node to citylist vector
+    //Adds node to citylist vector.
     void setCityNode(CityNode node);
 
-    //Prints whole _cityList vector
+    //Prints whole _cityList vector.
     void printCityNodes();
 
     void printSpecificCityNode(unsigned int node);
 
-    //Sets file/city name
+    //Sets file/city name.
     void setFileName(std::string name);
 
     std::string getFileName();
@@ -46,11 +46,12 @@ public:
 
     int listVectorSpecific(int n);
 
-    int getCityNodeInt(int node);
+    int getCityNodeInteger(int node);
 
     void removeCityList(int node);
 
 private:
+
     std::vector<CityNode> _cityList;
     std::string _fileName;
     CityNode node;

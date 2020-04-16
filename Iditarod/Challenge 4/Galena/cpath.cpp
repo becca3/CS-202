@@ -1,38 +1,45 @@
 #include "cpath.h"
 
-Citypath::Citypath() {}
+Citypath::Citypath(const int &b) : _size(b) {}
 
-Citypath::Citypath(CityNode node)
-{
-    int connection = node.getNodeNo();
-    connections_.push_back(connection);
-}
-
-void Citypath::setCityPath(CityNode node)
-{
-    int connection = node.getNodeNo();
-    connections_.push_back(connection);
-}
-
-void Citypath::printCityPath()
-{
-    for (auto a : connections_)
-    {
-        std::cout << a << std::endl;
-    }
-}
-
-int Citypath::cpathSize()
+int Citypath::citypathSize()
 {
     return connections_.size();
 }
 
-int Citypath::pathVectorSpecific(int n)
+void Citypath::Addpath(const int& n)
+{
+    connections_.push_back(n);
+}
+
+void Citypath::Deletepath(const int& n)
+{
+    if (connections_.size() == 1) {
+        connections_.erase(connections_.begin());
+        return;
+    }
+    connections_.erase(connections_.begin() + n);
+}
+
+void Citypath::DeleteallPaths()
+{
+    connections_.clear();
+}
+
+int Citypath::Getpath(const int& n) const
 {
     return connections_[n];
 }
 
-void Citypath::BackPath()
+std::vector<int> Citypath::get_connections()
 {
-    connections_.pop_back();
+    return connections_;
+}
+
+void Citypath::Setconnections(std::vector<int>& vec)
+{
+    for (auto a : vec)
+    {
+        connections_.push_back(a);
+    }
 }

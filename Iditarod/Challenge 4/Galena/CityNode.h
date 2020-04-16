@@ -18,7 +18,6 @@ public:
 	double getXLongitude();
 
 private:
-	std::string cityName_;
 	unsigned int nodeNumber_;
 	double latitude_;
 	double longitude_;
