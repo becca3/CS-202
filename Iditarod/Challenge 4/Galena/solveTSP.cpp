@@ -10,7 +10,17 @@ unsigned int TSPSolver::getRandomInt(int low, int high)
 
 void TSPSolver::SolveRandomly()
 {
+    Citypath marked;
+    Citypath unmarked;
+    std::vector<int> holder;
+    std::vector<int> final;
+
+    double dist = 0;
+
+    //Best Distance
     double bestDist = 1e12;
+
+    int m = 10;
 }
 
 void TSPSolver::SolveGreedy(Citylist& list, Citypath& path)
