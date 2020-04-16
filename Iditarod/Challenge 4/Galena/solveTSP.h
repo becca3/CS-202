@@ -10,9 +10,9 @@
 class TSPSolver
 {
 public:
-    void SolveRandomly();
-    void SolveGreedy(Citylist &list, Citypath &path);
-    void SolveMyWay();
+    void SolveRandomly(Citylist &list);
+    void SolveGreedy(Citylist &list);
+    void SolveMyWay(Citylist &list);
     unsigned int getRandomInt(int low, int high);
 
 private:
