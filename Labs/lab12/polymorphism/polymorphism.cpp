@@ -44,7 +44,7 @@ public:
 		std::cout << "Non-virtual Derived functionA \n";
 	}
 
-	virtual void functionB()
+	virtual void functionB() override 
 	{
 		std::cout << "Virtual Derived functionB \n";
 	}
@@ -53,9 +53,22 @@ public:
 void testbaseclasspointer()
 {
 	Base a;
-	Base* pb = &a;
-	pb->functionA();
-	pb->functionB();
+	{
+		Base* pa = &a;
+		pa->functionA();
+		pa->functionB();
+	}
+	Derived d;
+	{
+		Base* pb = &d;
+		pb-> functionA();
+		pb->functionB();
+	}
+	{
+		Derived* pd = &d;
+		pd->functionA();
+		pd->functionB();
+	}
 }
 
 void dashes()
@@ -68,7 +81,7 @@ int main(int argc, char** argv)
 	{ Base a; a.functionA(); a.functionB(); }
 	dashes();
 
-	testbaseclasspointer;
+	testbaseclasspointer();
 	dashes();
 	return 0;
 }
