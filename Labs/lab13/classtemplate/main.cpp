@@ -9,8 +9,12 @@ public:
 	{
 
 	}
-//private:
+private:
 	WrapType obj_;
+
+	template <typename T>
+	friend std::ostream& operator<<(std::ostream& os, const Wrapper<T>& w);
+
 };
 
 template <typename T>
