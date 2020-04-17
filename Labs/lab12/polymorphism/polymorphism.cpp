@@ -71,6 +71,16 @@ void testbaseclasspointer()
 	}
 }
 
+void testBaseref()
+{
+	Base b;
+	{
+		Base& bb = b;
+		b.functionA();
+		b.functionB();
+	}
+}
+
 void dashes()
 {
 	std::cout << "----------------\n";
@@ -82,6 +92,9 @@ int main(int argc, char** argv)
 	dashes();
 
 	testbaseclasspointer();
+	dashes();
+
+	testBaseref();
 	dashes();
 	return 0;
 }
