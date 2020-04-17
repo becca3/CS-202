@@ -3,90 +3,90 @@
 #include <iostream>
 #include <string> 
 
-class Base
+class Mum
 {
 public:
-	Base()
+	Mum()
 	{
-		std::cout << "Base::Base() constructor \n";
+		std::cout << "Mum::Mum() constructor \n";
 	}
 
-	virtual ~Base()
+	virtual ~Mum()
 	{
-		std::cout << "Base::~Base destructor \n";
+		std::cout << "Mum::~Mum destructor \n";
 	}
 
 	void functionA()
 	{
-		std::cout << "Non-virtual Base functionA \n";
+		std::cout << "Non-virtual Mum functionA \n";
 	}
 
 	virtual void functionB()
 	{
-		std::cout << "Virtual Base functionB \n";
+		std::cout << "Virtual Mum functionB \n";
 	}
 };
 
-class Derived : public Base
+class Child : public Mum
 {
 public:
-	Derived()
+	Child()
 	{
-		std::cout << "Derived::Derived() constructor \n";
+		std::cout << "Child::Child() constructor \n";
 	}
-	~Derived()
+	~Child()
 	{
-		std::cout << "Derived::~Derived destructor \n";
+		std::cout << "Child::~Child destructor \n";
 	}
 
 	void functionA()
 	{
-		std::cout << "Non-virtual Derived functionA \n";
+		std::cout << "Non-virtual Child functionA \n";
 	}
 
 	virtual void functionB() override 
 	{
-		std::cout << "Virtual Derived functionB \n";
+		std::cout << "Virtual Child functionB \n";
 	}
 };
 
-void testbaseclasspointer()
+void testMumclasspointer()
 {
-	Base a;
+	Mum a;
 	{
-		Base* pa = &a;
+		Mum* pa = &a;
 		pa->functionA();
 		pa->functionB();
 	}
-	Derived d;
+	Child d;
 	{
-		Base* pb = &d;
+		Mum* pb = &d;
 		pb-> functionA();
 		pb->functionB();
 	}
 	{
-		Derived* pd = &d;
+		Child* pd = &d;
 		pd->functionA();
 		pd->functionB();
 	}
 }
 
-void testBaseref()
+void testMumref()
 {
-	Base b;
+	Mum b;
 	{
-		Base& bb = b;
+		Mum& bb = b;
 		b.functionA();
 		b.functionB();
 	}
-	Derived d;
+	Child d;
 	{
-		Base& bb = b;
+		Mum& bb = b;
 		bb.functionA();
 		bb.functionB();
 	}
 	{
-		Derived& dd = d;
+		Child& dd = d;
 		dd.functionA();
 		dd.functionB();
 	}
@@ -99,13 +99,13 @@ void dashes()
 
 int main(int argc, char** argv)
 {
-	{ Base a; a.functionA(); a.functionB(); }
+	{ Mum a; a.functionA(); a.functionB(); }
 	dashes();
 
-	testbaseclasspointer();
+	testMumclasspointer();
 	dashes();
 
-	testBaseref();
+	testMumref();
 	dashes();
 	return 0;
 }
