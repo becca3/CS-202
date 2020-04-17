@@ -10,19 +10,43 @@ public:
 	{
 		std::cout << "Base::Base() constructor \n";
 	}
-	~Base()
+
+	virtual ~Base()
 	{
 		std::cout << "Base::~Base destructor \n";
 	}
 
 	void functionA()
 	{
-		std::cout << "Non-virtual base functionA \n";
+		std::cout << "Non-virtual Base functionA \n";
 	}
 
 	virtual void functionB()
 	{
-		std::cout << "Virtual base functionB \n";
+		std::cout << "Virtual Base functionB \n";
+	}
+};
+
+class Derived : public Base
+{
+public:
+	Derived()
+	{
+		std::cout << "Derived::Derived() constructor \n";
+	}
+	~Derived()
+	{
+		std::cout << "Derived::~Derived destructor \n";
+	}
+
+	void functionA()
+	{
+		std::cout << "Non-virtual Derived functionA \n";
+	}
+
+	virtual void functionB()
+	{
+		std::cout << "Virtual Derived functionB \n";
 	}
 };
 
