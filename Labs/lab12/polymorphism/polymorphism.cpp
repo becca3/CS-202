@@ -50,6 +50,14 @@ public:
 	}
 };
 
+void testbaseclasspointer()
+{
+	Base a;
+	Base* pb = &a;
+	pb->functionA();
+	pb->functionB();
+}
+
 void dashes()
 {
 	std::cout << "----------------\n";
@@ -60,5 +68,7 @@ int main(int argc, char** argv)
 	{ Base a; a.functionA(); a.functionB(); }
 	dashes();
 
+	testbaseclasspointer;
+	dashes();
 	return 0;
 }
