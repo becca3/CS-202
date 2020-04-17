@@ -85,6 +85,11 @@ void testBaseref()
 		bb.functionA();
 		bb.functionB();
 	}
+	{
+		Derived& dd = d;
+		dd.functionA();
+		dd.functionB();
+	}
 }
 
 void dashes()
