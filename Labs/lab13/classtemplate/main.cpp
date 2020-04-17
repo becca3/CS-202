@@ -26,9 +26,9 @@ std::ostream& operator<<(std::ostream& os, const Wrapper<T>& w)
 
 int main(int argc, char** argv)
 {
-	Wrapper<int> w{ 2 };
-	Wrapper<std::string> s{ "Hello world" };
-
-	std::cout << w << " " << s << "\n";
+	Wrapper<std::string> s{ "The time is: " };
+	Wrapper<int> w{ 3 };
+	
+	std::cout << s << " " << w << "\n";
 	return 0; 
 }
