@@ -10,5 +10,6 @@ int main(int argc, char** argv)
 {
 	std::cout << twice(2) << std::endl;
 	std::cout << twice(2.3) << std::endl;
+	std::cout << twice(std::string("Hello"));
 	return 0;
 }
