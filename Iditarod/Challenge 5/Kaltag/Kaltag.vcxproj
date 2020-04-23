@@ -150,6 +150,7 @@
     <ClCompile Include="cpath.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="solveTSP.cpp" />
+    <ClCompile Include="svg.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

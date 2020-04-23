@@ -90,3 +90,43 @@ void Citylist::removeCityList(int node)
 {
     _cityList.erase(_cityList.begin() + node);
 }
+
+double Citylist::Xmin() {
+    double min = 1e12;
+    for (auto i = 0; i < _cityList.size(); i++) {
+        if (getCityLon(i) < min) {
+            min = getCityLon(i);
+        }
+    }
+    return min;
+}
+
+double Citylist::Xmax() {
+    double max = 0;
+    for (auto i = 0; i < _cityList.size(); i++) {
+        if (getCityLon(i) > max) {
+            max = getCityLon(i);
+        }
+    }
+    return max;
+}
+
+double Citylist::Ymin() {
+    double min = 1e12;
+    for (auto i = 0; i < _cityList.size(); i++) {
+        if (getCityLat(i) < min) {
+            min = getCityLat(i);
+        }
+    }
+    return min;
+}
+
+double Citylist::Ymax() {
+    double max = 0;
+    for (auto i = 0; i < _cityList.size(); i++) {
+        if (getCityLat(i) > max) {
+            max = getCityLat(i);
+        }
+    }
+    return max;
+}

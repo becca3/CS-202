@@ -7,6 +7,7 @@
 #include "citylist.h"
 #include "cpath.h"
 #include "solveTSP.h"
+#include "svg.h"
 
 void readfile(std::string fileName, CityNode& node, Citylist& city)
 {
@@ -106,6 +107,90 @@ void readfile(std::string fileName, CityNode& node, Citylist& city)
 int main(int argc, char** argv)
 {
     CityNode node0(0, 0, 0);
+    TSPSolver solve;
+
+    //Make CityList for BRD14051
+    std::cout << "CITY: BRD14051\n";
+    Citylist brd;
+    readfile("brd14051.tsp", node0, brd);
+    Citypath svgbrd;
+    solve.SolveGreedy(brd, svgbrd);
+    std::cout << "Generating Greedy SVG Output\n";
+    graphSVG(brd, svgbrd, "BRD14051GreedyOutput.svg");
+    solve.SolveRandomly(brd, svgbrd);
+    std::cout << "Generating Randomly SVG Output\n";
+    graphSVG(brd, svgbrd, "BRD14051RandomlyOutput.svg");
+    solve.SolveMyWay(brd, svgbrd);
+    std::cout << "Generating MyWay SVG Output\n";
+    graphSVG(brd, svgbrd, "BRD14051MyWayOutput.svg");
+
+    std::cout << "\n";
+
+    //Make CityList for DSJ1000
+    std::cout << "CITY: DSJ1000\n";
+    Citylist dsj;
+    readfile("djs1000.tsp", node0, dsj);
+    Citypath svgdsj;
+    solve.SolveGreedy(dsj, svgdsj);
+    std::cout << "Generating Greedy SVG Output\n";
+    graphSVG(dsj, svgdsj, "DSJ1000GreedyOutput.svg");
+    solve.SolveRandomly(dsj, svgdsj);
+    std::cout << "Generating Randomly SVG Output\n";
+    graphSVG(dsj, svgdsj, "DSJ1000RandomlyOutput.svg");
+    solve.SolveMyWay(dsj, svgdsj);
+    std::cout << "Generating MyWay SVG Output\n";
+    graphSVG(dsj, svgdsj, "DSJ1000MyWayOutput.svg");
+
+    //Make CityList for PLA85900
+    std::cout << "CITY: PLA85900\n";
+    Citylist pla;
+    readfile("pla85900.tsp", node0, pla);
+    Citypath svgpla;
+    solve.SolveGreedy(pla, svgpla);
+    std::cout << "Generating Greedy SVG Output\n";
+    graphSVG(pla, svgpla, "PLA85900GreedyOutput.svg");
+    solve.SolveRandomly(pla, svgpla);
+    std::cout << "Generating Randomly SVG Output\n";
+    graphSVG(pla, svgpla, "PLA85900RandomlyOutput.svg");
+    solve.SolveMyWay(pla, svgpla);
+    std::cout << "Generating MyWay SVG Output\n";
+    graphSVG(pla, svgpla, "PLA85900MyWayOutput.svg");
+
+    std::cout << "\n";
+
+    //Make CityList for PR1002
+    std::cout << "CITY: PR1002\n";
+    Citylist pr;
+    readfile("pr1002.tsp", node0, pr);
+    Citypath svgpr;
+    solve.SolveGreedy(pr, svgpr);
+    std::cout << "Generating Greedy SVG Output\n";
+    graphSVG(pr, svgpr, "PR1002GreedyOutput.svg");
+    solve.SolveRandomly(pr, svgpr);
+    std::cout << "Generating Randomly SVG Output\n";
+    graphSVG(pr, svgpr, "PR1002RandomlyOutput.svg");
+    solve.SolveMyWay(pr, svgpr);
+    std::cout << "Generating MyWay SVG Output\n";
+    graphSVG(pr, svgpr, "PR1002MyWayOutput.svg");
+
+    std::cout << "\n";
+
+    // Make CityList for USA13509
+    std::cout << "CITY: USA\n";
+    Citylist us;
+    readfile("usa13509.tsp", node0, us);
+    Citypath svgus;
+    solve.SolveGreedy(us, svgus);
+    std::cout << "Generating Greedy SVG Output\n";
+    graphSVG(us, svgus, "us13509GreedyOutput.svg");
+    solve.SolveRandomly(us, svgus);
+    std::cout << "Generating Randomly SVG Output\n";
+    graphSVG(us, svgus, "us13509RandomlyOutput.svg");
+    solve.SolveMyWay(us, svgus);
+    std::cout << "Generating MyWay SVG Output\n";
+    graphSVG(us, svgus, "us13509MyWayOutput.svg");
+
+    //CityNode node0(0, 0, 0);
 
     ////Make Citylist for BRD14051
     //Citylist brd;
@@ -133,7 +218,7 @@ int main(int argc, char** argv)
     pr.printCityNodes();
     usa.printCityNodes();*/
 
-    Citylist test;
+    /*Citylist test;
     readfile("testing.tsp", node0, test);
 
     Citypath testPath;
@@ -149,7 +234,7 @@ int main(int argc, char** argv)
 
     std::cout << "Solved my way: \n";
     testSolve.SolveMyWay(test);
-    std::cout << "\n";
+    std::cout << "\n";*/
 
     return 0;
 }

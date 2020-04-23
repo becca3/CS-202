@@ -50,6 +50,14 @@ public:
 
     void removeCityList(int node);
 
+    double Xmin();
+
+    double Xmax();
+
+    double Ymin();
+
+    double Ymax();
+
 private:
 
     std::vector<CityNode> _cityList;
