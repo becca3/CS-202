@@ -8,6 +8,7 @@
 #include "cpath.h"
 #include "solveTSP.h"
 #include "svg.h"
+#include "fltk.h"
 
 void readfile(std::string fileName, CityNode& node, Citylist& city)
 {
