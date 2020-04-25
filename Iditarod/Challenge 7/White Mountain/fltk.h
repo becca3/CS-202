@@ -15,7 +15,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "citynode.h"
+
+#include "CityNode.h"
 #include "citylist.h"
 #include "svg.h"
 #include "solveTSP.h"
