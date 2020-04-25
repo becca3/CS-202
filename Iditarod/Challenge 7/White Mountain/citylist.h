@@ -1,5 +1,5 @@
-#ifndef CITYLIST_H_
-#define CITYLIST_H_
+#ifndef CITYLIST_H
+#define CITYLIST_H
 
 #include <iostream>
 #include <string>

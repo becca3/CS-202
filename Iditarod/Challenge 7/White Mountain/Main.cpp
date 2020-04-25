@@ -1,3 +1,6 @@
+#define WIN32
+#define dirent direct
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -44,7 +47,7 @@ int main(int argc, char** argv) {
 
 	//Import.
 	{ Fl_Button* importButton
-		= new Fl_Button(280, 35, 280, 70, "Import TSLIB");
+		= new Fl_Button(280, 35, 280, 70, "Import TSPLIB");
 	importButton->callback(open);
 	}
 
@@ -66,3 +69,4 @@ int main(int argc, char** argv) {
 
 	return (Fl::run());
 }
+

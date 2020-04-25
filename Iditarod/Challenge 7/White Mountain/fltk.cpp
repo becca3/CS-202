@@ -83,7 +83,7 @@ void greedy(Fl_Widget* w, void* data)
         TSPSolver solve;
 
         //Run solveGreedy.
-        std::string distance = std::to_string(solve.SolveGreedy(list, path));
+        string distance = std::to_string(solve.SolveGreedy(list, path));
 
         Fl_Button* b = (Fl_Button*)w;
         Fl_Output* o = (Fl_Output*)b->parent()->child(5);
@@ -151,7 +151,8 @@ void random(Fl_Widget* w, void* data)
 }
 
 //Runs MyWay.
-void myWay(Fl_Widget* w, void* data) {
+void myWay(Fl_Widget* w, void* data) 
+{
     std::string input = userFile;
     if (input != "") {
 
@@ -190,12 +191,14 @@ void myWay(Fl_Widget* w, void* data) {
 }
 
 //Closes window.
-void closeWindow(Fl_Widget* w, void* data) {
+void closeWindow(Fl_Widget* w, void* data)
+{
     Fl_Window* win = (Fl_Window*)data;
     win->hide();
 }
 
-void saveSVGGreedy(Fl_Widget* w, void* data) {
+void saveSVGGreedy(Fl_Widget* w, void* data) 
+{
 
     std::string input = userFile;
 
@@ -264,7 +267,7 @@ void saveSVGMyWay(Fl_Widget* w, void* data)
     Citypath path;
     TSPSolver solve;
 
-    std::string distance = std::to_string(solve.SolveMyWay(list, path));
+    string distance = std::to_string(solve.SolveMyWay(list, path));
 
     std::string saveName = userFile;
     saveName.erase(saveName.end() - 4, saveName.end());

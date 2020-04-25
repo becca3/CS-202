@@ -1,6 +1,11 @@
 #include "cpath.h"
 
-Citypath::Citypath(const int &b) : _size(b) {}
+//Citypath::Citypath(const int &b) : _size(b) {}
+
+Citypath::Citypath(const int& s) : _size(s)
+{
+
+}
 
 int Citypath::citypathSize()
 {

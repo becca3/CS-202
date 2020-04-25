@@ -1,5 +1,5 @@
-#ifndef CPATH_H_
-#define CPATH_H_
+#ifndef CPATH_H
+#define CPATH_H
 
 #include <iostream>
 #include <vector>
@@ -8,8 +8,6 @@
 
 class Citypath
 {
-public:
-    //Default Constructor.
 public:
     Citypath(const int& s);
 

@@ -1,5 +1,5 @@
-#pragma comment (lib, "fltk.lib")
-#pragma comment (lib, "comctl32.lib")
+//#pragma comment (lib, "fltk.lib")
+//#pragma comment (lib, "comctl32.lib")
 
 #ifndef FLTK_H
 #define FLTK_H
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <string>
+using std::string;
 #include <sstream>
 
 #include "CityNode.h"
