@@ -15,10 +15,10 @@
 
 int main(int argc, char** argv) {
 	// Main Window
-	Fl_Double_Window* window = new Fl_Double_Window(810, 370, "TSPLIB Solve.");
+	Fl_Double_Window* window = new Fl_Double_Window(800, 480, "TSPLIB Solve.");
 
 	{ Fl_Menu_Bar* menuBar
-		= new Fl_Menu_Bar(0, 0, 85, 25);
+		= new Fl_Menu_Bar(0, 0, 100, 40);
 
 	menuBar->add("File/Open", FL_CTRL + 'open', open);
 
@@ -29,19 +29,19 @@ int main(int argc, char** argv) {
 
 	//Greedy.
 	{ Fl_Button* greedyButton
-		= new Fl_Button(55, 280, 180, 45, "Greedy");
+		= new Fl_Button(50, 280, 180, 45, "Solve Greedy");
 	greedyButton->callback(greedy);
 	}
 
 	//Random.
 	{ Fl_Button* randomButton
-		= new Fl_Button(325, 280, 180, 45, "Random");
+		= new Fl_Button(320, 280, 180, 45, "Solve Random");
 	randomButton->callback(random);
 	}
 
 	//SolveMyWay.
 	{ Fl_Button* myWayButton
-		= new Fl_Button(585, 280, 180, 45, "MyWay");
+		= new Fl_Button(580, 280, 180, 45, "Solve MyWay");
 	myWayButton->callback(myWay);
 	}
 
