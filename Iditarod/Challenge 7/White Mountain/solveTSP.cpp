@@ -75,6 +75,8 @@ double TSPSolver::SolveRandomly(Citylist& list, Citypath& marked)
     }
     //cout << marked.getPath(marked.size() - 1) << endl;
     std::cout << "Total distance: " << dist << std::endl;
+
+    return dist;
 }
 
 double TSPSolver::SolveGreedy(Citylist& list, Citypath& marked)
@@ -142,6 +144,8 @@ double TSPSolver::SolveGreedy(Citylist& list, Citypath& marked)
     }
     //cout << marked.getPath(marked.size() - 1) << endl;
     std::cout << "Total distance: " << dist << std::endl;
+
+    return dist;
 }
 
 double TSPSolver::SolveMyWay(Citylist& list, Citypath& marked)
@@ -163,5 +167,6 @@ double TSPSolver::SolveMyWay(Citylist& list, Citypath& marked)
     //cout << marked.getPath(marked.size() - 1) << endl;
     std::cout << "Total distance: " << dist << std::endl;
 
+    return dist;
 }
 

@@ -1,6 +1,9 @@
 //#pragma comment (lib, "fltk.lib")
 //#pragma comment (lib, "comctl32.lib")
 
+#define WIN32
+#define dirent direct
+
 #ifndef FLTK_H
 #define FLTK_H
 
